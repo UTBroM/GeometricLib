@@ -40,3 +40,8 @@ typedef PointElement* Polygon;
  */
 Point createPoint(float abscisse, float ordinate);
 
+/**
+ * Function wich create a new empty Polygon
+ * return the new empty polygon
+ */
+Polygon createPolygon();
