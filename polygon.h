@@ -41,7 +41,7 @@ typedef PointElement* Polygon;
  * ordinate - real
  * return a new point
  */
-Point createPoint(float abscisse, float ordinate);
+Point createPoint(double abscisse, double ordinate);
 
 /**
  * Function wich create a new empty Polygon
