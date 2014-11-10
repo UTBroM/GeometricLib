@@ -1,5 +1,0 @@
-/** Author : Paul TREHIOU & Victor SENE
- *  Date : November 2014
- **/
-
-function createPoint(abscisse : float, ordinate : float) : Point
