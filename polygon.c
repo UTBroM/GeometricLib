@@ -2,8 +2,7 @@
  *  Date : November 2014
  **/
  
-#include <stdlib.h>
-#include <stdio.h>
+#include <polygon.h>
 
 /**
   * Function wich create a point with a specified abscisse and ordinate

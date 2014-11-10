@@ -2,6 +2,9 @@
  *  Date : November 2014
  **/
 
+#include <stdlib.h>
+#include <stdio.h>
+ 
 /**
  * Declaration Point structure
  * x - real wich is the abscisse of the point
