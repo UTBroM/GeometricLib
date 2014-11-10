@@ -2,6 +2,17 @@
  *  Date : November 2014
  **/
 
+/**
+ *
+ *
+ */
+ 
+ typedef struct $
+ {
+ 	float x;
+ 	float y;
+ }Point;
+
  /**
   * Function wich create a point with a specified abscisse and ordinate
   * abscisse - real
@@ -9,4 +20,3 @@
   * return a new point
   */
 
-  
