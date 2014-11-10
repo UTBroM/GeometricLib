@@ -22,8 +22,8 @@ typedef struct
 typedef struct pointelem{
 
 	Point value;
-	pointelem* next;
-	pointelem* previous;
+	struct pointelem* next;
+	struct pointelem* previous;
 
 }PointElement;
 
