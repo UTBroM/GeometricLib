@@ -3,3 +3,9 @@
  **/
 
 function createPoint(abscisse : float, ordinate : float) : Point
+Begin
+	Point point;
+	point.x <- abscisse;
+	point.y <- ordinate;
+	createPoint <- point;
+End
