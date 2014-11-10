@@ -17,12 +17,24 @@ Return: newpoly
 function addPoint(inpoly : Polygon, inpoint : Point) : Polygon
 Begin
 
-	value(newelem) <- inpoint
-	next(newelem) <- inpoly
-	previous(newelem) <- previous(inpoly)
 	newpoly <- inpoly
-	next(previous(newpoly) <- newelem
-	previous(newpoly) <- newelem
+	value(newelem) <- inpoint
+	
+	if inpoly==NULL then do
+
+		newpoly <- newelem
+		next(newpoly) <- newpoly
+		previous(newpoly) <- newpoly
+
+	else
+
+		next(newelem) <- inpoly
+		previous(newelem) <- previous(inpoly)
+		next(previous(newpoly) <- newelem
+		previous(newpoly) <- newelem
+
+	done
+
 	addPoint <- newpoly
 
 End

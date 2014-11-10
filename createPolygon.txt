@@ -16,9 +16,6 @@ Return: a polygon
 function createPolygon() : Polygon
 Begin
 
-	value(newpoly) <- createPoint(0,0)
-	next(newpoly) <- newpoly
-	previous(newpoly) <- newpoly
-	createPolygon <- newpoly
+	createPolygon <- NULL
 
 End
