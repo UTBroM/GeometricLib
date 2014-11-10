@@ -11,18 +11,18 @@ ALGORITHM
 =========
 Data: 	Polygon: inpoly
 	Point: inpoint
-Return: newpoint
+Return: newpoly
 
 
-function addPoint(inpoly : Polygon, inpoint : Point) : Point
+function addPoint(inpoly : Polygon, inpoint : Point) : Polygon
 Begin
 
 	value(newelem) <- inpoint
 	next(newelem) <- inpoly
 	previous(newelem) <- previous(inpoly)
 	newpoly <- inpoly
-	next(previous(inpoly) <- newelem
-	previous(inpoly) <- newelem
-	addPoint <- inpoly
+	next(previous(nexpoly) <- newelem
+	previous(nexpoly) <- newelem
+	addPoint <- nexpoly
 
 End
