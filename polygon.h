@@ -14,14 +14,6 @@ typedef struct
 }Point;
 
 /**
- * Function wich create a point with a specified abscisse and ordinate
- * abscisse - real
- * ordinate - real
- * return a new point
- */
-Point createPoint(float abscisse, float ordinate);
-
-/**
  * Declaration of the Element structure
  * value - value of the point of the current element of the polygon
  * next - pointer on the next element
@@ -39,3 +31,12 @@ typedef struct pointelem{
  * Declaration of the Polygon
  */
 typedef PointElement* Polygon;
+
+/**
+ * Function wich create a point with a specified abscisse and ordinate
+ * abscisse - real
+ * ordinate - real
+ * return a new point
+ */
+Point createPoint(float abscisse, float ordinate);
+
