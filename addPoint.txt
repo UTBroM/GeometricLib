@@ -1,0 +1,28 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ **/
+
+LEXICON
+========
+newpoly: the modified polygon with the new point
+newelem: the new element which will be added
+
+ALGORITHM
+=========
+Data: 	Polygon: inpoly
+	Point: inpoint
+Return: newpoint
+
+
+function addPoint(inpoly : Polygon, inpoint : Point) : Point
+Begin
+
+	value(newelem) <- inpoint
+	next(newelem) <- inpoly
+	previous(newelem) <- previous(inpoly)
+	newpoly <- inpoly
+	next(previous(inpoly) <- newelem
+	previous(inpoly) <- newelem
+	addPoint <- inpoly
+
+End
