@@ -34,3 +34,24 @@ Polygon createPolygon(){
 	return newpoly;
 
 }
+/**
+ * Function wich add a point at the end of an existing polygon
+ * inpoly - Polygon
+ * inpoint - Point
+ * return a new polygon
+ */
+Polygon addPoint(Polygon inpoly, Point inpoint)
+{
+
+	Polygon newpoly = inpoly;
+	PointElement* newelem=NULL;
+	newelem=(PointElement*)malloc(sizeof(PointElement));
+	newelem->value = inpoint;
+	newelem->next = inpoly;
+	newelem->previous = inpoly->previous;
+	newpoly->previous->next = newelem;
+	newpoly->previous = newelem;
+	return newpoly;
+
+}
+

@@ -48,3 +48,11 @@ Point createPoint(double abscisse, double ordinate);
  * return the new empty polygon
  */
 Polygon createPolygon();
+
+/**
+ * Function wich add a point at the end of an existing polygon
+ * inpoly - Polygon
+ * inpoint - Point
+ * return a new polygon
+ */
+Polygon addPoint(Polygon inpoly, Point inpoint);
