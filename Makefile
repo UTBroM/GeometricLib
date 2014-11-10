@@ -9,7 +9,7 @@ LIBFILES=polygon
 LIBSRC=$(LIBFILES:=.c)
 LIBOBJ=$(LIBFILES:=.o)
 
-EXEC=polylol.exe
+EXEC=polylol
 SRCFILES=polygonmain
 SRC=$(SRCFILES:=.c)
 OBJ=$(SRC:.c=.o)
