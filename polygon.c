@@ -10,8 +10,13 @@
   * ordinate - real
   * return a new point
   */
-Point createPoint(float abscisse, float ordinate){
-	return EXIT_SUCCESS;
+Point createPoint(double abscisse, double ordinate){
+
+	Point newpoint;
+	newpoint.x = abscisse;
+	newpoint.y = ordinate;
+	return newpoint;
+
 }
 
 /**
