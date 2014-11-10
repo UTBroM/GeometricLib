@@ -26,12 +26,7 @@ Point createPoint(double abscisse, double ordinate){
 
 Polygon createPolygon(){
 
-	Polygon newpoly=NULL;
-	newpoly = (PointElement*)malloc(sizeof(PointElement));
-	newpoly->value=createPoint(0,0);
-	newpoly->next=newpoly;
-	newpoly->previous=newpoly;
-	return newpoly;
+	return NULL;
 
 }
 /**
@@ -47,10 +42,25 @@ Polygon addPoint(Polygon inpoly, Point inpoint)
 	PointElement* newelem=NULL;
 	newelem=(PointElement*)malloc(sizeof(PointElement));
 	newelem->value = inpoint;
-	newelem->next = inpoly;
-	newelem->previous = inpoly->previous;
-	newpoly->previous->next = newelem;
-	newpoly->previous = newelem;
+
+	if(inpoly==NULL)
+	{
+
+		newpoly=newelem;
+		newpoly->next=newpoly;
+		newpoly->previous=newpoly;
+
+	}
+	else
+	{
+
+		newelem->next = inpoly;
+		newelem->previous = inpoly->previous;
+		newpoly->previous->next = newelem;
+		newpoly->previous = newelem;
+
+	}
+
 	return newpoly;
 
 }
