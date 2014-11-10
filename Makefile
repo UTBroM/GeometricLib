@@ -1,7 +1,7 @@
 CC=gcc
 LIBFLAGS=-L.
 INCLUDEFLAGS=-I. -I/usr/include 
-CFLAGS=-Wall -Werror -ansi -pedantic -fpic
+CFLAGS=-Wall -Werror -ansi -pedantic -fpic -g
 
 LIB=libPolygon.so
 LIBNAME=Polygon
