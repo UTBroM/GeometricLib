@@ -3,10 +3,10 @@
  **/
 
 /**
- *
- *
+ * Declaration Point structure
+ * x - real wich is the abscisse of the point
+ * y - real wich is the ordinate of the point
  */
-
  typedef struct
  {
  	float x;
