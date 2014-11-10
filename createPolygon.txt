@@ -1,0 +1,24 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ **/
+
+LEXICON
+=======
+
+newpoly: The new polygon of type Polygon
+
+ALGORITHM
+=========
+
+Data: nothing
+Return: a polygon
+
+function createPolygon() : Polygon
+Begin
+
+	value(newpoly) <- createPoint(0,0)
+	next(newpoly) <- newpoly
+	previous(newpoly) <- newpoly
+	createPolygon <- newpoly
+
+End
