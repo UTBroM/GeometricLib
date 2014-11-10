@@ -8,11 +8,11 @@
  * y - real wich is the ordinate of the point
  */
 
- typedef struct
- {
- 	float x;
+typedef struct
+{
+	float x;
  	float y;
- }Point;
+}Point;
 
 /**
  * Function wich create a point with a specified abscisse and ordinate
