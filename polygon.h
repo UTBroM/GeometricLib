@@ -25,7 +25,7 @@ typedef struct pointelem{
 
 	Point value;
 	pointelem* next;
-	pointelem* before;
+	pointelem* previous;
 
 }PointElement;
 
