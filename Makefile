@@ -17,6 +17,8 @@ OBJ=$(SRC:.c=.o)
 
 all: $(EXEC)
 
+lib: $(LIB)
+
 $(EXEC): $(OBJ) $(LIB)
 	@echo "\n Generating the executable " $@
 	$(CC) $(OBJ) -l$(LIBNAME) $(LIBFLAGS) -o $@
