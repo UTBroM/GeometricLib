@@ -21,8 +21,8 @@ Begin
 	next(newelem) <- inpoly
 	previous(newelem) <- previous(inpoly)
 	newpoly <- inpoly
-	next(previous(nexpoly) <- newelem
-	previous(nexpoly) <- newelem
-	addPoint <- nexpoly
+	next(previous(newpoly) <- newelem
+	previous(newpoly) <- newelem
+	addPoint <- newpoly
 
 End
