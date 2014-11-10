@@ -33,7 +33,12 @@ typedef struct pointelem{
 /**
  * Declaration of the Polygon
  */
-typedef PointElement* Polygon;
+typedef struct {
+
+	PointElement* head;
+	int size;
+
+}Polygon
 
 /**
  * Function wich create a point with a specified abscisse and ordinate
