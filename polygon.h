@@ -21,6 +21,12 @@ typedef struct
  */
 Point createPoint(float abscisse, float ordinate);
 
+/**
+ * Declaration of the Element structure
+ * value - value of the point of the current element of the polygon
+ * next - pointer on the next element
+ * previous - pointer on the previous element
+ */
 typedef struct pointelem{
 
 	Point value;
@@ -29,4 +35,7 @@ typedef struct pointelem{
 
 }PointElement;
 
+/**
+ * Declaration of the Polygon
+ */
 typedef PointElement* Polygon;
