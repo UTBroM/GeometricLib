@@ -27,7 +27,7 @@ Point createPoint(double abscisse, double ordinate){
 Polygon createPolygon(){
 
 	Polygon newpoly=NULL;
-	newpoly = (PointElement*)malloc(sizeof(PointElement);
+	newpoly = (PointElement*)malloc(sizeof(PointElement));
 	newpoly->value=createPoint(0,0);
 	newpoly->next=newpoly;
 	newpoly->previous=newpoly;
