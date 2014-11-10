@@ -19,4 +19,4 @@
   * ordinate - real
   * return a new point
   */
-
+createPoint(float abscisse, float ordinate);
