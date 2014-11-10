@@ -20,3 +20,13 @@
   * return a new point
   */
 createPoint(float abscisse, float ordinate);
+
+typedef struct pointelem{
+
+	Point value;
+	pointelem* next;
+	pointelem* before;
+
+}PointElement;
+
+typedef PointElement* Polygon;
