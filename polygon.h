@@ -38,7 +38,7 @@ typedef struct {
 	PointElement* head;
 	int size;
 
-}Polygon
+}Polygon;
 
 /**
  * Function wich create a point with a specified abscisse and ordinate
