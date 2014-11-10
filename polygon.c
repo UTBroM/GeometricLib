@@ -26,10 +26,10 @@ Point createPoint(double abscisse, double ordinate){
 
 Polygon createPolygon(){
 
-	Polygon outpoly;
-	outpoly.head = NULL;
-	outpoly.size = 0;	
-	return outpoly;
+	Polygon newpoly;
+	newpoly.head = NULL;
+	newpoly.size = 0;	
+	return newpoly;
 
 }
 /**
