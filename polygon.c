@@ -1,7 +1,7 @@
 /** Author : Paul TREHIOU & Victor SENE
  *  Date : November 2014
  **/
- 
+
 #include <polygon.h>
 
 /**
@@ -28,7 +28,7 @@ Polygon createPolygon(){
 
 	Polygon newpoly;
 	newpoly.head = NULL;
-	newpoly.size = 0;	
+	newpoly.size = 0;
 	return newpoly;
 
 }
@@ -73,4 +73,3 @@ Polygon addPoint(Polygon inpoly, Point inpoint)
 	return newpoly;
 
 }
-
