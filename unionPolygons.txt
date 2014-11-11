@@ -11,11 +11,11 @@
 		- outpointb
 
 3- On vérifie si le segment inpointa -> intersection ne crée pas de nouvelle intersection si non on cherche l'intersection suivante et on recommence
-3- On continue c avec l'intersection
-4- On regarde si inpointb ou outpointb se situe à l'intérieur de a si il y en a un on choisis le point à l'extérieur pour la suite
-5- On test si le segment intersection en cours -> inpointb crée une intersection si oui on regarde si intersection préc -> new intersection crée encore une intersection si oui on cherche une ou ca marche si aucune alors on recommence avec outpointb
+4- On continue c avec l'intersection
+5- On regarde si inpointb ou outpointb se situe à l'intérieur de a si il y en a un on choisis le point à l'extérieur pour la suite
+6- On test si le segment intersection en cours -> inpointb crée une intersection si oui on regarde si intersection préc -> new intersection crée encore une intersection si oui on cherche une ou ca marche si aucune alors on recommence avec outpointb
 
-A partir de la je sais pas comment choisir la bonne direction
+7- On regarde quel est le segment qui se trouve à l'extérieur d'au moins un polygone (on dit que se trouver sur un polygone compte comme à l'intérieur)
 
-6- On continue c avec ce nouveau point
-7- Pour la suite on switch sur l'autre polygone et on recommence jusqu'a ce que next(c) = c
+8- On continue c avec ce nouveau point
+9- Pour la suite on switch sur l'autre polygone et on recommence jusqu'a ce que next(c) = c
