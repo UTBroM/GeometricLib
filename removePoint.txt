@@ -11,7 +11,7 @@ ALGORITHM
 =========
 Data:   Polygon: inpoly
         Integer: index
-Return: newpoly
+Return: inpoly
 
 
 function removePoint(inpoly : Polygon, index : Integer) : Polygon
@@ -20,6 +20,15 @@ Begin
 	head(newpoly) <- head(inpoly)
         size(newpoly) <- size(inpoly)
 
-	For i from 1 to index
+	For i from 1 to index-1
+
+		head(newpoly) <- head(next(newpoly))
+
+	done
+
+	next(previous(head(newpoly))) <- next(head(newpoly))
+	previous(next(head(newpoly))) <- previous(head(newpoly))
+
+	removePoint <- inpoly
 
 End
