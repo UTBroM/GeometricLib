@@ -1,0 +1,43 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ *  The idea of the algorithm is to draw a virtual horizontal line to the right from the point and count the number of intersections with the polygon
+ **/
+
+LEXICON
+========
+out: Boolean
+place: Integer that store the relative position of the previous point in the poligon and the point
+
+ALGORITHM
+=========
+Data : Polygon inpoly, Point inpoint
+Return : out
+
+
+function containsPoint(inpoly: Polygon,inpoint: Point) : Bool
+Begin
+
+	out <- FALSE
+	place <- 0
+	
+	For i from 0 to size(inpoly) do
+
+		if x(value(head(inpoly))) < x(inpoint) AND y(value(head(inpoly))) > y(inpoint) AND place = 1
+		do
+
+			out <- non(out)
+			place <- -1
+
+		else if x(value(head(inpoly))) > x(inpoint) AND y(value(head(inpoly))) > y(inpoint) AND place = -1
+		do
+
+			out <- non(out)
+			place <- 1
+
+		done
+
+	done
+
+	containsPoint <- out
+
+End
