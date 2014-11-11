@@ -73,3 +73,35 @@ Polygon addPoint(Polygon inpoly, Point inpoint)
 	return newpoly;
 
 }
+
+/**
+ * Function wich remove a point at a given place in an existing polygon
+ * inpoly - Polygon
+ * index - int
+ * return a new polygon
+ */
+Polygon removePoint(Polygon inpoly, int index)
+{
+
+	int i;
+	Polygon newpoly;
+	newpoly.head = inpoly.head;
+	newpoly.size = inpoly.size;
+
+	for(i=0;i<index;i++)
+	{
+
+		newpoly.head = newpoly.head->next;
+
+	}
+
+	newpoly.head->previous->next = newpoly.head->next;
+	newpoly.head->next->previous = newpoly.head->previous;
+
+	free(newpoly.head);
+
+	inpoly.size--;
+
+	return inpoly;
+
+}
