@@ -58,7 +58,6 @@ Polygon createPolygon();
  * Function wich add a point at the end of an existing polygon
  * inpoly - Polygon
  * inpoint - Point
- * newelem - new Point in the Polygon
  * return a new polygon
  */
 Polygon addPoint(Polygon inpoly, Point inpoint);
