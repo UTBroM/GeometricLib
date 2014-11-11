@@ -105,3 +105,41 @@ Polygon removePoint(Polygon inpoly, int index)
 	return inpoly;
 
 }
+
+/**
+ * Function wich return true if a point is contained into a polygon, false otherwise
+ * inpoly - Polygon
+ * inpoint - Point
+ * return a boolean
+ */
+boolean containsPoint(Polygon inpoly, Point inpoint)
+{
+
+	boolean out = FALSE;
+	short place = 0;
+	int i = 0;
+
+	for(i=0;i<inpoly.size;i++)
+	{
+
+		if((inpoly.head->value.x < inpoint.x) && (inpoly.head->value.y > inpoint.y) && place==1)
+		{
+
+			out = !out;
+			place = -1;
+
+		}
+		else if((inpoly.head->value.x > inpoint.x) && (inpoly.head->value.y > inpoint.y) && place==-1)
+		{
+
+			out = !out;
+			place = 1;
+
+		}
+
+	}
+
+	return out;
+
+}
+

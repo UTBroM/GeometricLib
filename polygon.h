@@ -4,6 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
+/*Declaration of the boolean type*/
+typedef enum{TRUE=(1==1),FALSE=(1==0)}boolean;
  
 /**
  * Declaration Point structure
@@ -69,3 +72,12 @@ Polygon addPoint(Polygon inpoly, Point inpoint);
  * return a new polygon
  */
 Polygon removePoint(Polygon inpoly, int index);
+
+/**
+ * Function wich return true if a point is contained into a polygon, false otherwise
+ * inpoly - Polygon
+ * inpoint - Point
+ * return a boolean
+ */
+boolean containsPoint(Polygon inpoly, Point inpoint);
+
