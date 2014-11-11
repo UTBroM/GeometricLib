@@ -122,20 +122,22 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 	for(i=0;i<inpoly.size;i++)
 	{
 
-		if((inpoly.head->value.x < inpoint.x) && (inpoly.head->value.y > inpoint.y) && place==1)
+		if((inpoly.head->value.y < inpoint.y))
 		{
 
-			out = !out;
+			if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
 			place = -1;
 
 		}
-		else if((inpoly.head->value.x > inpoint.x) && (inpoly.head->value.y > inpoint.y) && place==-1)
+		else if(inpoly.head->value.y > inpoint.y)
 		{
 
-			out = !out;
+			if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
 			place = 1;
 
 		}
+
+	inpoly.head = inpoly.head->next;
 
 	}
 
