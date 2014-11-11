@@ -4,14 +4,17 @@
 int main(int argc, char* argv[]) {
 
 	Polygon lol;
-	Point test = createPoint(1,0.5);
+	Point test = createPoint(-1,0.5);
 	int i;
 
 	lol=createPolygon();
 	lol=addPoint(lol, createPoint(0,0));
-	lol=addPoint(lol, createPoint(0,1));
-	lol=addPoint(lol, createPoint(1,1));
 	lol=addPoint(lol, createPoint(1,0));
+	lol=addPoint(lol, createPoint(0.5,0.5));
+	lol=addPoint(lol, createPoint(1,1));
+	lol=addPoint(lol, createPoint(1,2));
+	lol=addPoint(lol, createPoint(-1,2));
+	lol=addPoint(lol, createPoint(0,1));
 
 	printf("\n\ntaille : %d", lol.size);
 
