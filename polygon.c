@@ -88,7 +88,7 @@ Polygon removePoint(Polygon inpoly, int index)
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
 
-	for(i=0;i<index;i++)
+	for(i=0;i<index-1;i++)
 	{
 
 		newpoly.head = newpoly.head->next;
