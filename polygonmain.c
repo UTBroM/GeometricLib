@@ -12,8 +12,14 @@ int main(int argc, char* argv[]) {
 
 	printf("\n\ntaille : %d", lol.size);
 
-	printf("\n\nx premier point : %f", lol.head->value.x);
-	printf("\ny premier point : %f\n\n", lol.head->value.y);
+	for(i=0;i<lol.size;i++)
+	{
+
+		printf("\n\nx %de point : %f", i, lol.head->value.x);
+		printf("\ny %de point : %f\n\n", i, lol.head->value.y);
+		lol.head=lol.head->next;
+
+	}
 
 	printf("\n\nx 2eme point : %f", lol.head->next->value.x);
 	printf("\ny 2eme point : %f\n\n", lol.head->next->value.y);
@@ -26,14 +32,14 @@ int main(int argc, char* argv[]) {
 
         printf("\n\ntaille : %d", lol.size);
 
-        printf("\n\nx premier point : %f", lol.head->value.x);
-        printf("\ny premier point : %f\n\n", lol.head->value.y);
+        for(i=0;i<lol.size;i++)
+	{
 
-        printf("\n\nx 2eme point : %f", lol.head->next->value.x);
-        printf("\ny 2eme point : %f\n\n", lol.head->next->value.y);
+		printf("\n\nx %de point : %f", i, lol.head->value.x);
+		printf("\ny %de point : %f\n\n", i, lol.head->value.y);
+		lol.head=lol.head->next;
 
-        printf("\n\nx 3eme point : %f", lol.head->next->next->value.x);
-        printf("\ny 3eme point : %f\n\n", lol.head->next->next->value.y);
+	}
 
 
 
