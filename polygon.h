@@ -61,3 +61,11 @@ Polygon createPolygon();
  * return a new polygon
  */
 Polygon addPoint(Polygon inpoly, Point inpoint);
+
+/**
+ * Function wich remove a point at a given place in an existing polygon
+ * inpoly - Polygon
+ * index - int
+ * return a new polygon
+ */
+Polygon removePoint(Polygon inpoly, int index);
