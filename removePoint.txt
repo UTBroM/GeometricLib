@@ -31,4 +31,6 @@ Begin
 
 	removePoint <- inpoly
 
+	inpoly.size <- inpoly.size-1
+
 End
