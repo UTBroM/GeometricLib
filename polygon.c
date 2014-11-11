@@ -119,7 +119,7 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 	short place = 0;
 	int i = 0;
 
-	for(i=0;i<inpoly.size;i++)
+	for(i=0;i<=inpoly.size;i++)
 	{
 
 		if((inpoly.head->value.y < inpoint.y))
