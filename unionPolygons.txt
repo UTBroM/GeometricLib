@@ -1,0 +1,17 @@
+1- Parcourir le premier polygone (a) tout en créant un nouveau polygone (c)
+2- Si un segment de a coupe un segement de l'autre polygone (b) alors on stocke dans une liste d'un nouveau type comprenant:
+
+	- Les coordonées de l'intersection
+	- Les coordonées des 4 points en rapport avec l'intersection associés à leur polygone comme ça :
+
+		- inpointa	(Point duquel on vient sur le poly a)
+		- outpointa	(Point suivant du poly a avec outpoint = next(a))
+		- inpointb
+		- outpointb
+
+3- Tant que le nombre d'intersection est 1 (tant que pas 2 en fait) on continue 1 et 2
+4- On teste si le segment inpointa -> intersection1 crée une intersection si oui on reteste avec l'autre intersection
+5- On comtinue c avec l'intersection qui ne pose pas de problème
+5- On regarde si inpointb ou outpointb se situe à l'interieur de a si il y en a un on passe direct à 7 en prenant le point à l'éxtérieur
+6- On test si le segment intersection en cours -> inpointb crée une intersection si oui on refait avec outpointb
+7- On comptinue c avec ce nouveau point 
