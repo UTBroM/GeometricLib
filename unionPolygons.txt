@@ -10,6 +10,7 @@
 		- inpointb
 		- outpointb
 
+3- On vérifie si le segment inpointa -> intersection ne crée pas de nouvelle intersection si non on cherche l'intersection suivante et on recommence
 3- On continue c avec l'intersection
 4- On regarde si inpointb ou outpointb se situe à l'intérieur de a si il y en a un on passe direct à 7 en prenant le point à l'extérieur
 5- On test si le segment intersection en cours -> inpointb crée une intersection si oui on refait avec outpointb
