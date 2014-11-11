@@ -136,6 +136,25 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 			place = 1;
 
 		}
+		else if(inpoly.head->value.y == inpoint.y)
+		{
+
+			if(inpoly.head->next->value.y > inpoint.y && inpoly.head->previous->value.y < inpoint.y)
+			{
+
+				if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
+				place = 1;
+
+			}
+			else if(inpoly.head->next->value.y < inpoint.y && inpoly.head->previous->value.y > inpoint.y)
+			{
+
+				if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
+				place = -1;
+
+			}
+
+		}
 
 	inpoly.head = inpoly.head->next;
 
