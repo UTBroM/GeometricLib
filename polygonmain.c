@@ -21,8 +21,8 @@ int main(int argc, char* argv[]) {
 	for(i=0;i<lol.size;i++)
 	{
 
-		printf("\n\nx %de point : %f", i, lol.head->value.x);
-		printf("\ny %de point : %f\n\n", i, lol.head->value.y);
+		printf("\n\nx %de point : %f", i+1, lol.head->value.x);
+		printf("\ny %de point : %f\n\n", i+1, lol.head->value.y);
 		lol.head=lol.head->next;
 
 	}
@@ -39,8 +39,8 @@ int main(int argc, char* argv[]) {
         for(i=0;i<lol.size;i++)
 	{
 
-		printf("\n\nx %de point : %f", i, lol.head->value.x);
-		printf("\ny %de point : %f\n\n", i, lol.head->value.y);
+		printf("\n\nx %de point : %f", i+1, lol.head->value.x);
+		printf("\ny %de point : %f\n\n", i+1, lol.head->value.y);
 		lol.head=lol.head->next;
 
 	}
