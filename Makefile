@@ -14,6 +14,8 @@ SRCFILES=polygonmain
 SRC=$(SRCFILES:=.c)
 OBJ=$(SRC:.c=.o)
 
+run: all
+	LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:. ./$(EXEC)
 
 all: $(EXEC)
 
