@@ -29,7 +29,7 @@ typedef struct pointelem{
 
 	Point value;
 	struct pointelem* next;
-	struct pointelem* previous;
+	struct pointelem* prev;
 
 }PointElement;
 

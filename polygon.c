@@ -55,16 +55,16 @@ Polygon addPoint(Polygon inpoly, Point inpoint)
 
 		newpoly.head=newelem;
 		newpoly.head->next=newpoly.head;
-		newpoly.head->previous=newpoly.head;
+		newpoly.head->prev=newpoly.head;
 
 	}
 	else
 	{
 
 		newelem->next = inpoly.head;
-		newelem->previous = inpoly.head->previous;
-		newpoly.head->previous->next = newelem;
-		newpoly.head->previous = newelem;
+		newelem->prev = inpoly.head->prev;
+		newpoly.head->prev->next = newelem;
+		newpoly.head->prev = newelem;
 
 	}
 
@@ -95,8 +95,8 @@ Polygon removePoint(Polygon inpoly, int index)
 
 	}
 
-	newpoly.head->previous->next = newpoly.head->next;
-	newpoly.head->next->previous = newpoly.head->previous;
+	newpoly.head->prev->next = newpoly.head->next;
+	newpoly.head->next->prev = newpoly.head->prev;
 
 	free(newpoly.head);
 
@@ -139,14 +139,14 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 		else if(inpoly.head->value.y == inpoint.y)
 		{
 
-			if(inpoly.head->next->value.y > inpoint.y && inpoly.head->previous->value.y < inpoint.y)
+			if(inpoly.head->next->value.y > inpoint.y && inpoly.head->prev->value.y < inpoint.y)
 			{
 
 				if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
 				place = 1;
 
 			}
-			else if(inpoly.head->next->value.y < inpoint.y && inpoly.head->previous->value.y > inpoint.y)
+			else if(inpoly.head->next->value.y < inpoint.y && inpoly.head->prev->value.y > inpoint.y)
 			{
 
 				if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
