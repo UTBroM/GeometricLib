@@ -49,13 +49,12 @@ typedef struct {
 typedef struct{
 
 	Point value;
-	PointElement* a1; /*First point of the segment 1*/
-	PointElement* a2; /*Second point of the segment 1*/
-	PointElement* b1; /*First point of the segment 2*/
-	PointElement* b2; /*Second point of the segment 2*/
+	Point a1; /*First point of the segment 1*/
+	Point a2; /*Second point of the segment 1*/
+	Point b1; /*First point of the segment 2*/
+	Point b2; /*Second point of the segment 2*/
 
 }Intersection;
-	
 
 /**
  * Function wich create a point with a specified abscisse and ordinate
