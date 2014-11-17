@@ -202,7 +202,7 @@ double max(double a, double b)
 		return a;
 
 	}
-	else
+	else{
 
 		return b;
 
