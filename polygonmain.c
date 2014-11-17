@@ -6,6 +6,7 @@ int main(int argc, char* argv[]) {
 	Polygon lol;
 	Point test = createPoint(-1,0.5);
 	int i;
+	Intersection* testlol;
 
 	lol=createPolygon();
 	lol=addPoint(lol, createPoint(0,0));
@@ -46,7 +47,15 @@ int main(int argc, char* argv[]) {
 	}
 
 
+	printf("\n\n==================================\n\nTest d'une intersection");
 
+	testlol = segmentsCross(createPoint(0,1), createPoint(0,-2), createPoint(-3,-1), createPoint(4,-1));
+
+	if(testlol != NULL){
+
+		printf("\n\nL'intersection est : \n\n	x: %f\n	y: %f\n\n", testlol->value.x, testlol->value.y);
+
+	}
 
 
 
