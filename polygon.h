@@ -101,3 +101,10 @@ boolean containsPoint(Polygon inpoly, Point inpoint);
  */
 Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4);
 
+/**
+ * Function wich return the maximum value of 2 double
+ * double a, b
+ * Return the maximum
+ */
+double max(double a, double b);
+
