@@ -1,0 +1,67 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ **/
+
+LEXICON
+========
+Real a1: slope of straight 1
+Real a2: slope of straight 2
+Real b1: y intercept of straight 1
+Real b2: y intercept of straight 2
+
+xi: x of the intersection
+yi: y of the intersection
+
+out: out intersection
+
+ALGORITHM
+=========
+Data:   Point: p1 Points of the first segment
+	Point: p2
+	Point: p3 Points of the second segment
+	Point: p4
+	
+Return: Intersection
+
+
+function segmentsCross(Point: p1, Point: p2, Point: p3, Point: p4) : Intersection
+Begin
+
+	a1<-(y(p2)-y(p1))/(x(p2)-x(p1))
+	a2<-(y(p4)-y(p3))/(x(p4)-x(p3))
+
+	if a1 = a2 Then
+
+		segmentsCross <- NULL
+
+	else
+
+		b1 <- y(p1) - a1 * x(p1)
+		b2 <- y(p3) - a2 * y(p3)
+
+		xi = (b2 - b1)/(a1 - a2)
+		yi = a1 * xi + b1
+
+		if (xi < min(x(p1),x(p2)) OR xi > max(x(p1),x(p2)))
+
+			segmentsCross <- NULL
+
+		done
+		if (xi < min(x(p3),x(p4)) OR xi > max(x(p3),x(p4)))
+
+			segmentsCross <- NULL
+
+		done
+
+		x(value(out)) <- xi
+		y(value(out)) <- yi
+		a1(value(out) <- p1
+		a2(value(out) <- p2
+		b1(value(out) <- p3
+		b2(value(out) <- p4
+
+		segmentsCross <- out
+
+	done
+
+End
