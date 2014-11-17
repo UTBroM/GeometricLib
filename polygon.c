@@ -163,6 +163,19 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d;
 	yi = ((p3.y-p4.y)*(p1.x*p2.y-p1.y*p2.x)-(p1.y-p2.y)*(p3.x*p4.y-p3.y*p4.x))/d;
 
+	if(((xi < p1.x && xi < p2.x) || (xi > p1.x && xi > p2.x)) || ((yi < p1.y && yi < p2.y) || (yi > p1.y && yi > p2.y))){
+
+		free(out);
+		return NULL;
+
+	}
+	if(((xi < p3.x && xi < p4.x) || (xi > p3.x && xi > p4.x)) || ((yi < p3.y && yi < p4.y) || (yi > p3.y && yi > p4.y))){
+
+		free(out);
+		return NULL;
+
+	}
+
 	out->value.x = xi;
 	out->value.y = yi;
 
