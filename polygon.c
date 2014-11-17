@@ -158,7 +158,7 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 	out = (Intersection*)malloc(sizeof(Intersection));
 
 	d = (p1.x-p2.x)*(p3.y-p4.y) - (p1.y-p2.y)*(p3.x-p4.x);
-	if(d == 0){return NULL;}
+	if(d == 0){free(out);return NULL;}
 
 	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d;
 	yi = ((p3.y-p4.y)*(p1.x*p2.y-p1.y*p2.x)-(p1.y-p2.y)*(p3.x*p4.y-p3.y*p4.x))/d;
