@@ -125,7 +125,7 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 
 		inter = NULL;
 
-		inter = segmentsCross(inpoly.head->value,inpoly.head->next->value,inpoint,createPoint(max(inpoly.head->value.x,inpoly.head->next->value.x),inpoint.y)); /*Return the intersection of the current segment and a virtual horizontally segment draw from the testing point*/
+		inter = segmentsCross(inpoly.head->value,inpoly.head->next->value,inpoint,createPoint(max(inpoly.head->value.x,inpoly.head->next->value.x)+10,inpoint.y)); /*Return the intersection of the current segment and a virtual horizontally segment draw from the testing point*/
 
 		if(inter != NULL){
 
