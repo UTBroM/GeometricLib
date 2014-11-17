@@ -129,7 +129,12 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 
 		if(inter != NULL){
 
-			out = !out;
+			/*Exclude the case when the virtual segment go on a point*/
+			if(((inter->value.x != inpoly.head->value.x ) || (inter->value.y != inpoly.head->value.y )) && (inpoint.x < inter->value.x)){
+
+				out = !out;
+
+			}
 
 		}
 
