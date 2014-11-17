@@ -153,46 +153,24 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 {
 
-	double a1, a2, b1, b2, xi, yi;
+	double d, xi, yi;
 	Intersection* out;
 	out = (Intersection*)malloc(sizeof(Intersection));
 
-	a1 = (p2.y-p1.y)/(p2.x-p1.x);
-	a2 = (p4.y-p3.y)/(p4.x-p3.x);
+	d = (p1.x-p2.x)*(p3.y-p4.y) - (p1.y-p2.y)*(p3.x-p4.x);
+	if(d == 0){return NULL;}
 
-	if(a1==a2){
+	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d;
+	yi = ((p3.y-p4.y)*(p1.x*p2.y-p1.y*p2.x)-(p1.y-p2.y)*(p3.x*p4.y-p3.y*p4.x))/d;
 
-		return NULL;
+	out->value.x = xi;
+	out->value.y = yi;
 
-	}
-	else{
+	out->a1 = p1;
+	out->a2 = p2;
+	out->b1 = p3;
+	out->b2 = p4;
 
-		b1 = p1.y - a1 * p1.x;
-		b2 = p3.y - a2 * p3.x;
-
-		xi = (b2 - b1)/(a1 - a2);
-		yi = a1 * xi + b1;
-
-		if((xi < p1.x && xi < p2.x) || (xi > p1.x && xi > p2.x)){
-
-			return NULL;
-
-		}
-		if((xi < p3.x && xi < p4.x) || (xi > p3.x && xi > p4.x)){
-
-			return NULL;
-
-		}
-
-		out->value.x = xi;
-		out->value.y = yi;
-
-		out->a1 = p1;
-		out->a2 = p2;
-		out->b1 = p3;
-		out->b2 = p4;
-
-	}
 
 	return out;
 
