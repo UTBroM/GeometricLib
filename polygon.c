@@ -145,3 +145,56 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 
 }
 
+/**
+ * Function wich return the intersection between two segments NULL otherwise
+ * Point p1, p2, p3, p4
+ * Return an pointer on an intersection
+ */
+Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
+{
+
+	double a1, a2, b1, b2, xi, yi;
+	Intersection* out;
+	out = (Intersection*)malloc(sizeof(Intersection));
+
+	a1 = (p2.y-p1.y)/(p2.x-p1.x);
+	a2 = (p4.y-p3.y)/(p4.x-p3.x);
+
+	if(a1==a2){
+
+		return NULL;
+
+	}
+	else{
+
+		b1 = p1.y - a1 * p1.x;
+		b2 = p3.y - a2 * p3.x;
+
+		xi = (b2 - b1)/(a1 - a2);
+		yi = a1 * xi + b1;
+
+		if((xi < p1.x && xi < p2.x) || (xi > p1.x && xi > p2.x)){
+
+			return NULL;
+
+		}
+		if((xi < p3.x && xi < p4.x) || (xi > p3.x && xi > p4.x)){
+
+			return NULL;
+
+		}
+
+		out->value.x = xi;
+		out->value.y = yi;
+
+		out->a1 = p1;
+		out->a2 = p2;
+		out->b1 = p3;
+		out->b2 = p4;
+
+	}
+
+	return out;
+
+}
+
