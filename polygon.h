@@ -43,6 +43,17 @@ typedef struct {
 
 }Polygon;
 
+typedef struct{
+
+	Point value;
+	PointElement* a1;
+	PointElement* a2;
+	PointElement* b1;
+	PointElement* b2;
+
+}Intersection;
+	
+
 /**
  * Function wich create a point with a specified abscisse and ordinate
  * abscisse - real
