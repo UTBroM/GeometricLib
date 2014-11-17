@@ -43,13 +43,16 @@ typedef struct {
 
 }Polygon;
 
+/**
+ * Declaration of the Intersection
+ */
 typedef struct{
 
 	Point value;
-	PointElement* a1;
-	PointElement* a2;
-	PointElement* b1;
-	PointElement* b2;
+	PointElement* a1; /*First point of the segment 1*/
+	PointElement* a2; /*Second point of the segment 1*/
+	PointElement* b1; /*First point of the segment 2*/
+	PointElement* b2; /*Second point of the segment 2*/
 
 }Intersection;
 	
