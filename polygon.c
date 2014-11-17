@@ -116,13 +116,28 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 {
 
 	boolean out = FALSE;
-	short place = 0;
+	Intersection* inter = NULL;
+	/*short place = 0;*/
 	int i = 0;
 
 	for(i=0;i<=inpoly.size;i++)
 	{
 
-		if((inpoly.head->value.y < inpoint.y))
+		inter = NULL;
+
+		inter = segmentsCross(inpoly.head->value,inpoly.head->next->value,inpoint,createPoint(max(inpoly.head->value.x,inpoly.head->next->value.x),inpoint.y)); /*Return the intersection of the current segment and a virtual horizontally segment draw from the testing point*/
+
+		if(inter != NULL){
+
+			out = !out;
+
+		}
+
+
+
+
+
+		/*if((inpoly.head->value.y < inpoint.y))
 		{
 
 			if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
@@ -135,7 +150,7 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 			if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
 			place = 1;
 
-		}
+		}*/
 
 	inpoly.head = inpoly.head->next;
 
