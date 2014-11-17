@@ -125,14 +125,14 @@ boolean containsPoint(Polygon inpoly, Point inpoint)
 		if((inpoly.head->value.y < inpoint.y))
 		{
 
-			if(inpoly.head->value.x >= inpoint.x && place==1){out = !out;}
+			if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
 			place = -1;
 
 		}
 		else if(inpoly.head->value.y >= inpoint.y)
 		{
 
-			if(inpoly.head->value.x >= inpoint.x && place==-1){out = !out;}
+			if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
 			place = 1;
 
 		}
