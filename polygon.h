@@ -4,9 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
-/*Declaration of the boolean type*/
-typedef enum{TRUE=(1==1),FALSE=(1==0)}boolean;
+#include <bool.h>
  
 /**
  * Declaration Point structure
