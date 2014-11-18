@@ -1,6 +1,9 @@
 /** Author : Paul TREHIOU & Victor SENE
  *  Date : November 2014
  **/
+#ifndef __POLYGON_H__
+#define __POLYGON_H__
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -106,3 +109,4 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4);
  */
 double max(double a, double b);
 
+#endif
