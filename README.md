@@ -7,5 +7,5 @@ How to build
 -------------
 Run the following commands :
 
-  1. `export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.`
+  1. <s>`export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.`</s>
   2. `make all`
