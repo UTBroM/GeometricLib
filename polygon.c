@@ -112,10 +112,10 @@ Polygon removePoint(Polygon inpoly, int index)
  * inpoint - Point
  * return a boolean
  */
-boolean containsPoint(Polygon inpoly, Point inpoint)
+BOOL containsPoint(Polygon inpoly, Point inpoint)
 {
 
-	boolean out = FALSE;
+	BOOL out = FALSE;
 	Intersection* inter = NULL;
 	/*short place = 0;*/
 	int i = 0;
