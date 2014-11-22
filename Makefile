@@ -15,8 +15,7 @@ SRC=$(SRCFILES:=.c)
 OBJ=$(SRC:.c=.o)
 
 run: all
-	export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.
-	./$(EXEC)
+	LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:. ./$(EXEC)
 
 all: $(EXEC)
 
