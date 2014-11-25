@@ -4,7 +4,7 @@
 
 LEXICON
 ========
-
+i : integer comptor
 
 ALGORITHM
 =========
@@ -15,5 +15,7 @@ Return: Polygon outpoly
 
 function convexhullPolygon(Polygon inpoly) : Polygon
 Begin
-	
+	head(outpoly) <- head(inpoly)
+	For i from 2 to size(inpoly) do
+		while 
 End
