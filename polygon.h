@@ -93,7 +93,7 @@ Polygon removePoint(Polygon inpoly, int index);
  * inpoint - Point
  * return a boolean
  */
-boolean containsPoint(Polygon inpoly, Point inpoint);
+BOOL containsPoint(Polygon inpoly, Point inpoint);
 
 /**
  * Function wich return the intersection between two segments NULL otherwise
@@ -109,4 +109,5 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4);
  */
 double max(double a, double b);
 
-#endif
+#endif /*__POLYGON_H__*/
+

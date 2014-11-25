@@ -6,4 +6,5 @@ typedef enum {
 	TRUE=1
 }BOOL;
 
-#endif
+#endif /*__BOOL_H__*/
+
