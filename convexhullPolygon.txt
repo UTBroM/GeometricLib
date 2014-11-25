@@ -15,7 +15,24 @@ Return: Polygon outpoly
 
 function convexhullPolygon(Polygon inpoly) : Polygon
 Begin
-	head(outpoly) <- head(inpoly)
-	For i from 2 to size(inpoly) do
-		while 
+	inserttail(outpoly) <- head(inpoly)
+	inpoly <- next(inpoly)
+	inserttail(outpoly) <- head(inpoly)
+
+	For i from 3 to size(inpoly)
+
+		inpoly <- next(inpoly)
+
+		While size(outpoly) >= 2 AND (y(value(head(outpoly)))) - x(value(prev(head(outpoly)))))*(y(value(head(inpoly)))) - y(value(prev(head(outpoly))))) - (x(value(head(inpoly)))) - x(value(prev(head(outpoly)))))*(y(value(head(outpoly)))) - y(value(prev(head(outpoly))))) <= 0 do
+
+			removetail(outpoly)
+
+		Done
+
+		inserttail(outpoly) <- head(inpoly)
+
+	Done
+
+	convexhullPolygon <- outpoly
+
 End
