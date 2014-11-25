@@ -177,12 +177,13 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 	Intersection* out;
 	out = (Intersection*)malloc(sizeof(Intersection));
 
-	d = (p1.x-p2.x)*(p3.y-p4.y) - (p1.y-p2.y)*(p3.x-p4.x);
-	if(d == 0){free(out);return NULL;}
+	d = (p1.x-p2.x)*(p3.y-p4.y) - (p1.y-p2.y)*(p3.x-p4.x); /*Temporary variable that store a calculated real*/
+	if(d == 0){free(out);return NULL;} /*If this variable is 0 there aren't any intersections*/
 
-	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d;
+	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d; /*Coordinates of the intersection*/
 	yi = ((p3.y-p4.y)*(p1.x*p2.y-p1.y*p2.x)-(p1.y-p2.y)*(p3.x*p4.y-p3.y*p4.x))/d;
 
+	/*Check if the intersection is effectively in the two segments*/
 	if(((xi < p1.x && xi < p2.x) || (xi > p1.x && xi > p2.x)) || ((yi < p1.y && yi < p2.y) || (yi > p1.y && yi > p2.y))){
 
 		free(out);
@@ -196,6 +197,7 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 
 	}
 
+	/*Store all the value in "out"*/
 	out->value.x = xi;
 	out->value.y = yi;
 
