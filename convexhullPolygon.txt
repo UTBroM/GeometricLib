@@ -1,5 +1,6 @@
 /** Author : Paul TREHIOU & Victor SENE
  *  Date : November 2014
+ *  Found the convex hull of a polygon wich is given.
  **/
 
 LEXICON
