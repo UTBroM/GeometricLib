@@ -232,3 +232,26 @@ double max(double a, double b)
 
 }
 
+/**
+ * Function wich remove the last element of a polygon
+ * Polygon inpoly
+ * Return inpoly
+ **/
+ removeTail (Polygon inpoly)
+ {
+ 	if (inpoly.size != 0){
+ 		if (inpoly.size != 1){
+ 			tmp = createPolygon();
+ 			tmp = inpoly;
+ 			while (tmp.head->next->next != NULL){
+ 				tmp = tmp.head->next;
+ 			}
+ 			free(tmp)
+ 		}else{
+ 			free(inpoly.head);
+ 			inpoly.head = NULL;
+ 			inpoly.size == 0;
+ 		}
+ 	}
+ }
+
