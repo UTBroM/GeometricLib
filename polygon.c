@@ -246,12 +246,15 @@ double max(double a, double b)
  			while (tmp.head->next->next != NULL){
  				tmp = tmp.head->next;
  			}
- 			free(tmp)
+ 			free(tmp.head);
+ 			tmp.head = NULL;
+ 			tmp.size--;
  		}else{
  			free(inpoly.head);
  			inpoly.head = NULL;
  			inpoly.size == 0;
  		}
  	}
+ 	return inpoly;
  }
 
