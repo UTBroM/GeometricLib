@@ -109,5 +109,12 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4);
  */
 double max(double a, double b);
 
+/**
+ * Function wich remove the last element of a polygon
+ * Polygon inpoly
+ * Return inpoly
+ **/
+ removeTail (Polygon inpoly);
+
 #endif /*__POLYGON_H__*/
 
