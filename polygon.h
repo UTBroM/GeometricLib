@@ -51,7 +51,10 @@ typedef struct {
 
 }Polygon;
 
-
+/**
+ * Decalration of vecteur with his  x and y components
+ * We now that it's maybe useless with 
+ **/
 typedef struct {
 
 	double x;
