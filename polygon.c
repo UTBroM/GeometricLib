@@ -238,7 +238,7 @@ double max(double a, double b)
  * Return inpoly
  **/
 Polygon removeTail (Polygon inpoly)
- {
+{
 
 	PointElement* tail = inpoly.head->prev;
 
@@ -258,5 +258,5 @@ Polygon removeTail (Polygon inpoly)
 	}
 
  	return inpoly;
- }
+}
 
