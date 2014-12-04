@@ -116,5 +116,12 @@ double max(double a, double b);
  **/
 Polygon removeTail (Polygon inpoly);
 
+/**
+ * Function wich return the convex hull of a polygon
+ * Polygon inpoly
+ * Return outpoly
+ **/
+Polygon convexhullPolygon(Polygon inpoly);
+
 #endif /*__POLYGON_H__*/
 
