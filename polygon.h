@@ -51,6 +51,13 @@ typedef struct {
 
 }Polygon;
 
+
+typedef struct {
+
+	double x;
+	double y;
+}Vecteur;
+
 /**
  * Declaration of the Intersection
  */
