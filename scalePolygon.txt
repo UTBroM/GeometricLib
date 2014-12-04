@@ -21,12 +21,15 @@ Begin
 	
 	referencePoint <- head(inpoly)
 
-	for i = 0 to size(inpoly) do
+	for i = 1 to size(inpoly) - 1 do
 		head(inpoly) <- next(head(inpoly))
 
 		x(value(head(inpoly)) = x(value(head(inpoly)) + factor * (x(value(head(inpoly)) - x(value(referencePoint)))
 		y(value(head(inpoly)) = y(value(head(inpoly)) + factor * (y(value(head(inpoly)) - y(value(referencePoint)))
-			
-		
+
 	done
+
+	head(inpoly) = referencePoint
+
+	scalePolygon <- inpoly
 End
