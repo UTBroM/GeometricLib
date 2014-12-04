@@ -242,7 +242,7 @@ double max(double a, double b)
 
 	PointElement* tail = inpoly.head->prev;
 
- 	if (inpoly.size){
+ 	if (inpoly.size>1){
 
 		inpoly.head->prev = tail->prev;
 		tail->prev->next = inpoly.head;
@@ -250,6 +250,12 @@ double max(double a, double b)
 		free(tail);
 
  	}
+	else{
+
+		inpoly.head = NULL;
+		inpoly.size = 0;
+
+	}
 
  	return inpoly;
  }
