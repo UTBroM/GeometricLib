@@ -4,7 +4,7 @@
 
 LEXICON
 ========
-inpoly: the modified polygon with the new point
+inpoly: the polygon wich we extend
 factor: float wich is the coefficient of expension relative to a reference point (we take the head for the reference point)
 i: integer
 referencePoint : PointElement wich keep the initial head
