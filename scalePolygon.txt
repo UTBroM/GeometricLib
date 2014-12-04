@@ -1,36 +1,22 @@
 /** Author : Paul TREHIOU & Victor SENE
- *  Date : November 2014
+ *  Date : Decembre 2014
  **/
 
 LEXICON
 ========
-newpoly: the modified polygon with the new point
-index: the place of the element to remove
+inpoly: the modified polygon with the new point
+factor: float wich is the coefficient of expension relative to a reference point
 
 ALGORITHM
 =========
 Data:   Polygon: inpoly
-        Integer: index
+        Float: factor
 Return: inpoly
 
 
-function removePoint(inpoly : Polygon, index : Integer) : Polygon
+function scalePolygon(inpoly : Polygon, factor : Float) : Polygon
 Begin
 
-	head(newpoly) <- head(inpoly)
-        size(newpoly) <- size(inpoly)
-
-	For i from 1 to index-1
-
-		head(newpoly) <- head(next(newpoly))
-
-	done
-
-	next(previous(head(newpoly))) <- next(head(newpoly))
-	previous(next(head(newpoly))) <- previous(head(newpoly))
-
-	removePoint <- inpoly
-
-	inpoly.size <- inpoly.size-1
+	
 
 End
