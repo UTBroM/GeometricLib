@@ -8,7 +8,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <bool.h>
- 
+
+typedef enum{
+	INSIDE = 0,
+	OUTSIDE = 1,
+	INTERSECT = 2,
+	ENCLOSING = 3
+}Status;
+
 /**
  * Declaration Point structure
  * x - real wich is the abscisse of the point
