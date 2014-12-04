@@ -3,11 +3,12 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol;
+	Polygon lol, polyloutre;
 	Point test = createPoint(-1,0.5);
 	int i;
 	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
 	Intersection* testlol;
+	Status testing;
 
 	lol=createPolygon();
 	lol=addPoint(lol, createPoint(0,0));
@@ -17,6 +18,12 @@ int main(int argc, char* argv[]) {
 	lol=addPoint(lol, createPoint(1,2));
 	lol=addPoint(lol, createPoint(-1,2));
 	lol=addPoint(lol, createPoint(0,1));
+
+	polyloutre=createPolygon();
+	polyloutre=addPoint(polyloutre, createPoint(-2,-1));
+	polyloutre=addPoint(polyloutre, createPoint(-1,3));
+	polyloutre=addPoint(polyloutre, createPoint(2,3));
+	polyloutre=addPoint(polyloutre, createPoint(2,-2));
 
 	printf("\n\ntaille : %d", lol.size);
 
@@ -47,6 +54,9 @@ int main(int argc, char* argv[]) {
 
 	}
 
+	testing=containsPolygon(lol,polyloutre);
+
+	printf("\n\nLes deux polygones sont : %d", testing);
 
 	printf("\n==================================\n\nTest d'une intersection");
 
