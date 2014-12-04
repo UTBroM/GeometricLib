@@ -1,0 +1,36 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ **/
+
+LEXICON
+========
+newpoly: the modified polygon with the new point
+index: the place of the element to remove
+
+ALGORITHM
+=========
+Data:   Polygon: inpoly
+        Integer: index
+Return: inpoly
+
+
+function removePoint(inpoly : Polygon, index : Integer) : Polygon
+Begin
+
+	head(newpoly) <- head(inpoly)
+        size(newpoly) <- size(inpoly)
+
+	For i from 1 to index-1
+
+		head(newpoly) <- head(next(newpoly))
+
+	done
+
+	next(previous(head(newpoly))) <- next(head(newpoly))
+	previous(next(head(newpoly))) <- previous(head(newpoly))
+
+	removePoint <- inpoly
+
+	inpoly.size <- inpoly.size-1
+
+End
