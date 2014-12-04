@@ -1,0 +1,24 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+LEXICON
+========
+inpoly: the polygon wich will be translated
+P1: point 1 wich we need to build a vector
+P2: point 2 wich we need to build a vector
+
+ALGORITHM
+=========
+Data:   Polygon: inpoly
+        Point: P1, P2
+Return: inpoly
+
+
+function translatePolygon(inpoly : Polygon, factor : Float) : Polygon
+Begin
+	
+	
+
+	translatePolygon <- inpoly
+End
