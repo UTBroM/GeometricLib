@@ -1,0 +1,69 @@
+/**Author : Paul TREHIOU & Victor SENE
+ * Date : November 2014
+ * Function wich returns a Status enumeration type that could take the following values:
+ *	- INSIDE if the second polygon is fully inside the first one
+ *	- OUTSIDE if the second polygon is fully outside the first one
+ *	- INTERSECT if the second polygon is partially inside/outside the first one, in other words intersecting the second one
+ *	- ENCLOSING if the first polygon is fully in
+ **/
+
+LEXICON
+========
+Integers i, j
+Boolean inter
+
+ALGORITHM
+=========
+Data : Polygon poly1, Point poly2
+Return : Status out
+
+
+function containsPoint(inpoly: Polygon,inpoint: Point) : Bool
+Begin
+
+	i<-0
+	j<-0
+	inter<-FALSE
+
+	while i<size(poly1) AND no(inter) do
+
+	j<-0
+
+		while j<size(poly2) AND no(inter)) do
+
+			if segmentsCross(value(head(poly1)), value(next(head(poly1))), value(head(poly2)), value(next(head(poly2)))) != NULL then
+
+				inter<-TRUE
+
+			end if
+
+		j<-j+1
+		head(poly2) = next(head(poly2))
+
+		done
+
+	i<-i+1
+
+	head(poly1) <- next(head(poly1))
+
+	done
+
+	if inter then
+
+		containsPolygon<-INTERSECT
+
+	else if containsPoint(poly2,value(head(poly1)) then
+
+		containsPolygon<-ENCLOSING
+
+	else if containsPoint(poly1,value(head(poly2)) then
+
+		return INSIDE
+
+	else
+
+		return OUTSIDE
+
+	end if
+
+End
