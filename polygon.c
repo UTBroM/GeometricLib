@@ -117,7 +117,6 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
 
 	BOOL out = FALSE;
 	Intersection* inter = NULL;
-	/*short place = 0;*/
 	int i = 0;
 
 	for(i=0;i<=inpoly.size;i++)
@@ -137,25 +136,6 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
 			}
 
 		}
-
-
-
-
-
-		/*if((inpoly.head->value.y < inpoint.y))
-		{
-
-			if(inpoly.head->value.x > inpoint.x && place==1){out = !out;}
-			place = -1;
-
-		}
-		else if(inpoly.head->value.y >= inpoint.y)
-		{
-
-			if(inpoly.head->value.x > inpoint.x && place==-1){out = !out;}
-			place = 1;
-
-		}*/
 
 	inpoly.head = inpoly.head->next;
 
