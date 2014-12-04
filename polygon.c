@@ -253,7 +253,35 @@ Polygon removeTail (Polygon inpoly)
 Status containsPolygon (Polygon poly1, Polygon poly2)
 {
 
-	return OUTSIDE;
+	int i=0,j=0;
+	BOOL inter=FALSE;
+
+	while(i<poly1.size && !inter){
+
+	j=0;
+
+		while(j<poly2.size && !inter){
+
+			if(segmentsCross(poly1.head->value, poly1.head->next->value, poly2.head->value, poly2.head->next->value) != NULL){
+
+				inter=TRUE;
+
+			}
+
+		j++;
+		poly2.head = poly2.head->next;
+
+		}
+
+	i++;
+	poly1.head = poly1.head->next;
+
+	}
+
+	if(inter){return INTERSECT;}
+	else if(containsPoint(poly2,poly1.head->value)){return ENCLOSING;}
+	else if(containsPoint(poly1,poly2.head->value)){return INSIDE;}
+	else{return OUTSIDE;}
 
 }
 
