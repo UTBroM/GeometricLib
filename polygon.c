@@ -128,7 +128,7 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
 
 		if(inter != NULL){
 
-			/*Exclude the case when the virtual segment go on a point*/
+			/*Exclude the case when the virtual segment go on one of the two points of a segment of the polygon (otherwise the point would be counted 2 time)*/
 			if(((inter->value.x != inpoly.head->value.x ) || (inter->value.y != inpoly.head->value.y )) && (inpoint.x < inter->value.x)){
 
 				out = !out;
@@ -158,7 +158,7 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 	out = (Intersection*)malloc(sizeof(Intersection));
 
 	d = (p1.x-p2.x)*(p3.y-p4.y) - (p1.y-p2.y)*(p3.x-p4.x); /*Temporary variable that store a calculated real*/
-	if(d == 0){free(out);return NULL;} /*If this variable is 0 there aren't any intersections*/
+	if(d == 0){free(out);return NULL;} /*If this variable is 0 there aren't any intersections because the two right are parallel*/
 
 	xi = ((p3.x-p4.x)*(p1.x*p2.y-p1.y*p2.x)-(p1.x-p2.x)*(p3.x*p4.y-p3.y*p4.x))/d; /*Coordinates of the intersection*/
 	yi = ((p3.y-p4.y)*(p1.x*p2.y-p1.y*p2.x)-(p1.y-p2.y)*(p3.x*p4.y-p3.y*p4.x))/d;
