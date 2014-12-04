@@ -240,3 +240,20 @@ Polygon removeTail (Polygon inpoly)
  	return inpoly;
 }
 
+/**
+ * Function wich returns a Status enumeration type that could take the following values :
+ *	- INSIDE if the second polygon is fully inside the first one
+ *	- OUTSIDE if the second polygon is fully outside the first one
+ *	- INTERSECT if the second polygon is partially inside/outside the first one, in other words intersecting the second one
+ *	- ENCLOSING if the first polygon is fully in
+ *
+ * Polygon poly1, poly2
+ * Return out
+ **/
+Status containsPolygon (Polygon poly1, Polygon poly2)
+{
+
+	return OUTSIDE;
+
+}
+
