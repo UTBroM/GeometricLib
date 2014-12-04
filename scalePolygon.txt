@@ -5,7 +5,9 @@
 LEXICON
 ========
 inpoly: the modified polygon with the new point
-factor: float wich is the coefficient of expension relative to a reference point
+factor: float wich is the coefficient of expension relative to a reference point (we take the head for the reference point)
+i: integer
+referencePoint : PointElement wich keep the initial head
 
 ALGORITHM
 =========
@@ -16,7 +18,15 @@ Return: inpoly
 
 function scalePolygon(inpoly : Polygon, factor : Float) : Polygon
 Begin
-
 	
+	referencePoint <- head(inpoly)
 
+	for i = 0 to size(inpoly) do
+		head(inpoly) <- next(head(inpoly))
+
+		x(value(head(inpoly)) = x(value(head(inpoly)) + factor * (x(value(head(inpoly)) - x(value(referencePoint)))
+		y(value(head(inpoly)) = y(value(head(inpoly)) + factor * (y(value(head(inpoly)) - y(value(referencePoint)))
+			
+		
+	done
 End
