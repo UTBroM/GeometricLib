@@ -53,7 +53,7 @@ typedef struct {
 
 /**
  * Decalration of vecteur with his  x and y components
- * We now that it's maybe useless with 
+ * We now that it's maybe useless with the existance of Point but it's better to make a difference between this two structures of data
  **/
 typedef struct {
 
