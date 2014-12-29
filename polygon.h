@@ -135,7 +135,7 @@ Polygon removeTail (Polygon inpoly);
 
 /**
  * Function wich return the convex hull of a polygon
- * Polygon inpoly
+ * inpoly - Polygon
  * Return outpoly
  **/
 Polygon convexhullPolygon(Polygon inpoly);
