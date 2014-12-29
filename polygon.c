@@ -306,7 +306,38 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 	}
 
 	inpoly.head = referencePoint;
-	
+
 	return inpoly;
+}
+
+/**
+ * Function wich return the convex hull of a polygon
+ * inpoly - Polygon 
+ * Return outpoly
+ **/
+Polygon convexhullPolygon(Polygon inpoly)
+{
+	Polygon outpoly;
+	int i;
+
+	createPolygon(outpoly);
+	outpoly = insertTail(outpoly, inpoly);
+	inpoly = inpoly.head->next;
+	outpoly = insertTail(outpoly, inpoly);
+
+	for (i = 3; i < inpoly.size; i++)
+	{
+		inpoly = inpoly.head->next;
+
+		while (outpoly.size >= 2 AND ((outpoly.head->value.y - (outpoly.head->prev->value.x)*(inpoly.head->value.y) - (outpoly.head->prev->value.y) - (inpoly.head->value.x) - (outpoly.head->prev->value.x)*(outpoly.head->value.y) - (outpoly.head->prev->value.y)) <= 0))
+		{
+			removeTail(outpoly);
+		}
+		insertTail(outpoly, inpoly);
+
+	}
+
+	return outpoly;
+
 }
 
