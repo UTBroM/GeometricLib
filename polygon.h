@@ -158,7 +158,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2);
  * factor - float
  * Return a Polygon
  **/
-Polygon scalePolygon(Polygon inpoly, Float factor);
+Polygon scalePolygon(Polygon inpoly, float factor);
 
 
 #endif /*__POLYGON_H__*/
