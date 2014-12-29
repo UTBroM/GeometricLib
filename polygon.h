@@ -152,5 +152,14 @@ Polygon convexhullPolygon(Polygon inpoly);
  **/
 Status containsPolygon (Polygon poly1, Polygon poly2);
 
+/**
+ * Function wich extend a polygon in proportion of the given factor
+ * inpoly - Polygon
+ * factor - float
+ * Return a Polygon
+ **/
+Polygon scalePolygon(Polygon inpoly, Float factor);
+
+
 #endif /*__POLYGON_H__*/
 
