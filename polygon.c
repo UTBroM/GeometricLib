@@ -293,6 +293,19 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
  **/
 Polygon scalePolygon(Polygon inpoly, float factor)
 {
+	Point referencePoint;
+	int i;
+	referencePoint = inpoly.head;
+
+	for (i = 1; i < inpoly.size - 1; i++)
+	{
+		inpoly.head = inpoly.head->next;
+
+		inpoly.head->value.x = inpoly.head->value.x + factor * ((inpoly.head->value.x)-(referencePoint.head->value.x));
+		inpoly.head->value.y = inpoly.head->value.y + factor * ((inpoly.head->value.y)-(referencePoint.head->value.y));
+	}
+
+	inpoly.head = referencePoint;
 	
 	return inpoly;
 }
