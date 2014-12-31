@@ -293,7 +293,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
  **/
 Polygon scalePolygon(Polygon inpoly, float factor)
 {
-	Point referencePoint;
+	PointElement* referencePoint;
 	int i;
 	referencePoint = inpoly.head;
 
@@ -301,8 +301,8 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 	{
 		inpoly.head = inpoly.head->next;
 
-		inpoly.head->value.x = inpoly.head->value.x + factor * ((inpoly.head->value.x)-(referencePoint.head->value.x));
-		inpoly.head->value.y = inpoly.head->value.y + factor * ((inpoly.head->value.y)-(referencePoint.head->value.y));
+		inpoly.head->value.x = inpoly.head->value.x + factor * ((inpoly.head->value.x)-(referencePoint->value.x));
+		inpoly.head->value.y = inpoly.head->value.y + factor * ((inpoly.head->value.y)-(referencePoint->value.y));
 	}
 
 	inpoly.head = referencePoint;
@@ -317,23 +317,22 @@ Polygon scalePolygon(Polygon inpoly, float factor)
  **/
 Polygon convexhullPolygon(Polygon inpoly)
 {
-	Polygon outpoly;
+	Polygon outpoly = createPolygon(outpoly);
 	int i;
 
-	createPolygon(outpoly);
-	outpoly = insertTail(outpoly, inpoly);
-	inpoly = inpoly.head->next;
-	outpoly = insertTail(outpoly, inpoly);
+	addPoint(outpoly, inpoly.head->value);
+	inpoly.head = inpoly.head->next;
+	addPoint(outpoly, inpoly.head->value);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
-		inpoly = inpoly.head->next;
+		inpoly.head = inpoly.head->next;
 
 		while (outpoly.size >= 2 AND ((outpoly.head->value.y - (outpoly.head->prev->value.x)*(inpoly.head->value.y) - (outpoly.head->prev->value.y) - (inpoly.head->value.x) - (outpoly.head->prev->value.x)*(outpoly.head->value.y) - (outpoly.head->prev->value.y)) <= 0))
 		{
 			removeTail(outpoly);
 		}
-		insertTail(outpoly, inpoly);
+		addPoint(outpoly, inpoly.head->value);
 
 	}
 
