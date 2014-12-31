@@ -134,13 +134,6 @@ double max(double a, double b);
 Polygon removeTail (Polygon inpoly);
 
 /**
- * Function wich insert a polygon at the end of outpoly
- * outpoly, tailpoly - Polygon
- * Return outpoly 
- **/
-Polygon insertTail (Polygon outpoly, Polygon tailpoly);
-
-/**
  * Function wich return the convex hull of a polygon
  * inpoly - Polygon
  * Return outpoly

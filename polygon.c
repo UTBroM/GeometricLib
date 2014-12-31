@@ -321,9 +321,9 @@ Polygon convexhullPolygon(Polygon inpoly)
 	int i;
 
 	createPolygon(outpoly);
-	outpoly = insertTail(outpoly, inpoly);
+	outpoly = addPoint(outpoly, inpoly);
 	inpoly = inpoly.head->next;
-	outpoly = insertTail(outpoly, inpoly);
+	outpoly = addPoint(outpoly, inpoly);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
@@ -333,7 +333,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 		{
 			removeTail(outpoly);
 		}
-		insertTail(outpoly, inpoly);
+		addPoint(outpoly, inpoly);
 
 	}
 
