@@ -6,18 +6,34 @@ LEXICON
 ========
 inpoly: the polygon wich we compute the central symmetry
 inpoint: the reference point for the symmetry
+i: counting integer
 
 ALGORITHM
 =========
 Data:   Polygon: inpoly
         Point: inpoint
-Return: inpoly
+Return: outpoly
 
 
 function centralSymmetry(inpoly : Polygon, inpoint : Point) : Polygon
 Begin
 
-	
+	for i from 1 to size(inpoly) do
+
+		oldx <- x(value(head(inpoly)))
+		oldy <- y(value(head(inpoly)))
+		newx <- x(inpoint) - (oldx - x(inpoint))
+		newy <- y(inpoint) - (oldy - y(inpoint))
+
+		newpoint <- createPoint(newx, newy)
+
+		addPoint(outpoly, newpoint)
+
+		head(inpoly) <- next(inpoly)
+
+	done
+
+	centralSymmetry <- outpoly
 
 End
 
