@@ -1,0 +1,23 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+LEXICON
+========
+inpoly: the polygon wich we compute the central symmetry
+inpoint: the reference point for the symmetry
+
+ALGORITHM
+=========
+Data:   Polygon: inpoly
+        Point: inpoint
+Return: inpoly
+
+
+function centralSymmetry(inpoly : Polygon, inpoint : Point) : Polygon
+Begin
+
+	
+
+End
+
