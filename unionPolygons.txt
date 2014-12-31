@@ -19,3 +19,58 @@
 
 8- On continue c avec ce nouveau point
 9- Pour la suite on switch sur l'autre polygone et on recommence jusqu'a ce que next(c) = c
+
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+LEXICON
+========
+inpoly: the polygon wich we compute the central symmetry
+inpoint: the reference point for the symmetry
+i: counting integer
+
+ALGORITHM
+=========
+Data:   Polygon: poly1
+        Polygon: poly2
+Return: Polygon: outpoly
+
+
+function unionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
+Begin
+
+	//Step 0
+	while(containsPoint(poly2, value(head(poly1)))) do
+
+		head(poly1) <- next(poly1)
+
+	done
+
+	//Step 1
+	addpoint(outpoly, value(head(poly1)))
+	head(poly1) <- next(poly1)
+
+	while(not(containsPoint(poly2, value(head(poly1))))) then
+
+		addpoint(outpoly, value(head(poly1)))
+		head(poly1) <- next(poly1)
+
+	end if
+
+	//Step 2
+	while (intersectionpoint <- segmentsCross(value(head(poly1)), value(next(poly1)), value(head(poly2)), value(next(poly2)))) = NULL do
+
+		head(poly2) <- next(poly2)
+
+	done
+
+	//Step 3
+	while (intersectionpoint <- segmentsCross(value(head(poly1)), value(next(poly1)), value(head(poly2)), value(next(poly2)))) = NULL do
+
+		head(poly2) <- next(poly2)
+
+	done
+
+End
+
