@@ -138,7 +138,7 @@ Polygon removeTail (Polygon inpoly);
  * outpoly, tailpoly - Polygon
  * Return outpoly 
  **/
-Polygon insertTail (Polygon outpoly, tailpoly);
+Polygon insertTail (Polygon outpoly, Polygon tailpoly);
 
 /**
  * Function wich return the convex hull of a polygon
