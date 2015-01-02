@@ -5,17 +5,16 @@
 LEXICON
 ========
 inpoly: the polygon wich will be translated
-P1: point 1 wich we need to build a vector
-P2: point 2 wich we need to build a vector
+trvector: vector to 
 
 ALGORITHM
 =========
 Data:   Polygon: inpoly
-        Point: P1, P2
+        Vector: trvector
 Return: inpoly
 
 
-function translatePolygon(inpoly : Polygon, factor : Float) : Polygon
+function translatePolygon(inpoly : Polygon, trvector : Vector) : Polygon
 Begin
 	
 	
