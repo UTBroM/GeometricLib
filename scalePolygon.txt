@@ -18,18 +18,15 @@ Return: inpoly
 
 function scalePolygon(inpoly : Polygon, factor : Float) : Polygon
 Begin
-	
-	referencePoint <- head(inpoly)
 
-	for i = 1 to size(inpoly) - 1 do
+	for i = 1 to size(inpoly) do
+
 		head(inpoly) <- next(head(inpoly))
 
-		x(value(head(inpoly)) = x(value(head(inpoly)) + factor * (x(value(head(inpoly)) - x(value(referencePoint)))
-		y(value(head(inpoly)) = y(value(head(inpoly)) + factor * (y(value(head(inpoly)) - y(value(referencePoint)))
+		x(value(head(inpoly)) = factor * (x(value(head(inpoly))
+		y(value(head(inpoly)) = factor * (y(value(head(inpoly))
 
 	done
-
-	head(inpoly) = referencePoint
 
 	scalePolygon <- inpoly
 End
