@@ -5,11 +5,11 @@
 #include <polygon.h>
 
 /**
-  * Function wich create a point with a specified abscisse and ordinate
-  * abscisse - real
-  * ordinate - real
-  * return a new point
-  */
+ * Function wich create a point with a specified abscisse and ordinate
+ * abscisse - real
+ * ordinate - real
+ * return a new point
+ **/
 Point createPoint(double abscisse, double ordinate){
 
 	Point newpoint;
@@ -20,10 +20,9 @@ Point createPoint(double abscisse, double ordinate){
 }
 
 /**
-  * Function wich create a new empty polygon
-  * return the new empty polygon
-  */
-
+ * Function wich create a new empty polygon
+ * return the new empty polygon
+ **/
 Polygon createPolygon(){
 
 	Polygon newpoly;
@@ -72,7 +71,7 @@ Polygon addPoint(Polygon inpoly, Point inpoint, int index)
  * inpoint - Point
  * newelem - new Point in the Polygon
  * return a new polygon
- */
+ **/
 Polygon addTail(Polygon inpoly, Point inpoint)
 {
 
@@ -113,7 +112,7 @@ Polygon addTail(Polygon inpoly, Point inpoint)
  * inpoly - Polygon
  * index - int
  * return a new polygon
- */
+ **/
 Polygon removePoint(Polygon inpoly, int index)
 {
 
@@ -145,7 +144,7 @@ Polygon removePoint(Polygon inpoly, int index)
  * inpoly - Polygon
  * inpoint - Point
  * return a boolean
- */
+ **/
 BOOL containsPoint(Polygon inpoly, Point inpoint)
 {
 
@@ -183,7 +182,7 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
  * Function wich return the intersection between two segments NULL otherwise
  * Point p1, p2, p3, p4
  * Return an pointer on an intersection
- */
+ **/
 Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 {
 
@@ -229,7 +228,7 @@ Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
  * Function wich return the maximum value of 2 double
  * double a, b
  * Return the maximum
- */
+ **/
 double max(double a, double b)
 {
 
@@ -323,7 +322,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
  * Function wich extend a polygon in proportion of the given factor
  * inpoly - Polygon
  * factor - float
- * Return a Polygon
+ * Return the modified Polygon (/!\ the precedent polygon is deleted)
  **/
 Polygon scalePolygon(Polygon inpoly, float factor)
 {
