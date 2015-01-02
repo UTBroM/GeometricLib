@@ -43,8 +43,8 @@ int main(int argc, char* argv[]) {
 
 	printf("The point is%sin the polygon.\n\n", ((containsPoint(lol, test)))?" ":" not ");
 
-	printf("\nSuppression du 2e élément...\n");
-	lol=removePoint(lol, 2);
+	/*printf("\nSuppression du 2e élément...\n");
+	lol=removePoint(lol, 2);*/
 
         printf("\n\ntaille : %d", lol.size);
 
