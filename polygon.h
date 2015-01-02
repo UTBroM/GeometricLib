@@ -168,5 +168,11 @@ Polygon scalePolygon(Polygon inpoly, float factor);
  **/
 Polygon centralSymmetry(Polygon inpoly, Point inpoint);
 
+/**
+ * Procedure wich print coordinate of a point
+ * inpoint - Point
+ **/
+void printPoint(Point inpoint);
+
 #endif /*__POLYGON_H__*/
 
