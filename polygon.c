@@ -355,9 +355,9 @@ Polygon convexhullPolygon(Polygon inpoly)
 	Polygon outpoly = createPolygon();
 	int i;
 
-	outpoly = addPoint(outpoly, inpoly.head->value);
+	outpoly = addTail(outpoly, inpoly.head->value);
 	inpoly.head = inpoly.head->next;
-	outpoly = addPoint(outpoly, inpoly.head->value);
+	outpoly = addTail(outpoly, inpoly.head->value);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
