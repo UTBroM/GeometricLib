@@ -460,3 +460,36 @@ void printPolygon(Polygon inpoly)
 	printPoint(inpoly.head->value);
 	printf("]\n");
 }
+
+/**
+ * This function is like printPolygon but it's a function
+ * inpoly - Polygon
+ * Return a char* (string)
+ **/
+char* toString(Polygon inpoly)
+{
+	char* string;
+	string = "[";
+
+	for (i=1; i<inpoly.size-1; i++)
+	{
+		x = inpoly.head->value.x
+		y = inpoly.head->value.y
+
+		string = strcat(string, "[");
+		string = strcat(string, x);
+		string = strcat(string, ",");
+		string = strcat(string, y);
+		string = strcat(string, "],");
+
+		inpoly.head = inpoly.head->next;
+	}
+
+	string = strcat(string, "[");
+	string = strcat(string, x);
+	string = strcat(string, ",");
+	string = strcat(string, y);
+	string = strcat(string, "]]");
+
+	return string;
+}
