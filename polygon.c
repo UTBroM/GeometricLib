@@ -370,3 +370,12 @@ Polygon centralSymmetry(Polygon inpoly, Point inpoint)
 	return outpoly;
 }
 
+/**
+ * Procedure wich print coordinates of a point
+ * inpoint - Point
+ **/
+void printPoint(Point inpoint)
+{
+	printf("[%.2f,%.2f]", inpoint.x, inpoint.y);
+}
+
