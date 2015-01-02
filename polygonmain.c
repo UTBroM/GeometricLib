@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol, polyloutre;
+	Polygon lol, polyloutre, convexpoly;
 	Point test = createPoint(-1,0.5);
 	int i;
 	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
@@ -98,6 +98,21 @@ int main(int argc, char* argv[]) {
 	else{
 
 		printf("\n\nIl n'y a pas d'intersection\n\n");
+
+	}
+
+	printf("\n\n test du calcul d'un convexhull :\n");
+
+	convexpoly = convexhullPolygon(lol);
+
+        printf("\ntaille : %d\n", convexpoly.size);
+
+        for(i=0;i<convexpoly.size;i++)
+	{
+
+		printf("\n\nx %de point : %f", i+1, convexpoly.head->value.x);
+		printf("\ny %de point : %f\n\n", i+1, convexpoly.head->value.y);
+		convexpoly.head=convexpoly.head->next;
 
 	}
 
