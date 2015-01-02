@@ -351,23 +351,30 @@ Polygon scalePolygon(Polygon inpoly, float factor)
  **/
 Polygon convexhullPolygon(Polygon inpoly)
 {
+
 	Polygon outpoly = createPolygon();
 	int i;
 
-	addTail(outpoly, inpoly.head->value);
+	outpoly = addPoint(outpoly, inpoly.head->value);
 	inpoly.head = inpoly.head->next;
-	addTail(outpoly, inpoly.head->value);
+	outpoly = addPoint(outpoly, inpoly.head->value);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
+
 		inpoly.head = inpoly.head->next;
+
+		/*Vectorial product of the first point, the sign should be positive to continue (it would mean that the polygon turn always in the same direction)*/
 
 		while (outpoly.size >= 2 && ((outpoly.head->next->value.x - outpoly.head->value.x) * (inpoly.head->value.y - outpoly.head->next->value.y) - (inpoly.head->value.x - outpoly.head->next->value.x) * (outpoly.head->next->value.y - outpoly.head->value.y) < 0))
 		{
-			removeTail(outpoly);
+
+			outpoly.head = outpoly.head->prev;
+			outpoly = removePoint(outpoly,3);
+
 		}
 
-		addTail(outpoly, inpoly.head->value);
+		outpoly = addPoint(outpoly, inpoly.head->value);
 
 	}
 
