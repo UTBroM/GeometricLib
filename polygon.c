@@ -468,8 +468,10 @@ void printPolygon(Polygon inpoly)
  **/
 char* toString(Polygon inpoly)
 {
-	char* string;
+	char *string;
 	double x,y;
+	int i;
+
 	string = "[";
 
 	for (i=1; i<inpoly.size-1; i++)
@@ -477,20 +479,12 @@ char* toString(Polygon inpoly)
 		x = inpoly.head->value.x;
 		y = inpoly.head->value.y;
 
-		string = strcat(string, "[");
-		string = strcat(string, x);
-		string = strcat(string, ",");
-		string = strcat(string, y);
-		string = strcat(string, "],");
+		sprintf(string, "[%.2f,%.2f],", x, y);
 
 		inpoly.head = inpoly.head->next;
 	}
 
-	string = strcat(string, "[");
-	string = strcat(string, x);
-	string = strcat(string, ",");
-	string = strcat(string, y);
-	string = strcat(string, "]]");
-
+	sprintf(string, "[%.2f,%.2f]]", x, y);
+	
 	return string;
 }
