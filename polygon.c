@@ -362,7 +362,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 	{
 		inpoly.head = inpoly.head->next;
 
-		while (outpoly.size >= 2 && ((outpoly.head->value.y - (outpoly.head->prev->value.x)*(inpoly.head->value.y) - (outpoly.head->prev->value.y) - (inpoly.head->value.x) - (outpoly.head->prev->value.x)*(outpoly.head->value.y) - (outpoly.head->prev->value.y)) <= 0))
+		while (outpoly.size >= 2 && ((outpoly.head->next->value.x - outpoly.head->value.x) * (inpoly.head->value.y - outpoly.head->next->value.y) - (inpoly.head->value.x - outpoly.head->next->value.x) * (outpoly.head->next->value.y - outpoly.head->value.y) < 0))
 		{
 			removeTail(outpoly);
 		}
