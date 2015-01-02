@@ -1,0 +1,44 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+LEXICON
+========
+inpoly: the polygon wich we compute the rotation
+inpoint: the reference point for the rotation
+angle: the angle for the rotation
+
+ALGORITHM
+=========
+Data:   Polygon: inpoly
+        Point: inpoint
+	Real: angle
+Return: outpoly
+
+
+function rotatePolygon(inpoly : Polygon, inpoint : Point, Real: angle) : Polygon
+Begin
+
+	xref <- x(inpoint)
+	yref <- y(inpoint)
+
+	for i from 1 to size(inpoly) do
+
+		x <- x(value(head(inpoly))) - xref
+		y <- y(value(head(inpoly))) - yref
+
+		module <- sqrt(x^2 + y^2) /*Computation of the module*/
+		arg <- atan2(y,x) /*C function that compute the argument in radian of a given complex of the form x+i*y*/
+
+		arg <- arg + angle /*Rotation of the current point*/
+
+		/*Calculation of the new x and y*/
+		x(value(head(inpoly)))<-cos(arg)*module 
+		y(value(head(inpoly)))<-sin(arg)*module
+
+	done
+
+	rotatePolygon <- inpoly
+
+End
+
