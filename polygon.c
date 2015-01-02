@@ -374,7 +374,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 
 		}
 
-		outpoly = addPoint(outpoly, inpoly.head->value);
+		outpoly = addPoint(outpoly, inpoly.head->value, 2);
 
 	}
 
