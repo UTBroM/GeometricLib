@@ -506,3 +506,39 @@ char* toString(Polygon inpoly)
 	
 	return string;
 }
+
+/**
+ * This function return the rotation of a given polygon by an angle and a point
+ * inpoly - Polygon
+ * inpoint - Point
+ * angle - double
+ * Return a Polygon
+ **/
+Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
+{
+
+	double xref = inpoint.x;
+	double yref =inpoint.y;
+	double x, y, module, arg;
+
+	for(i=1;i<=inpoly.size;i++){
+
+		x = inpoly.head->value.x - xref;
+		y = inpoly.head->value.y - yref;
+
+		module = sqrt(x*x + y*y); /*Computation of the module*/
+		arg = atan2(y,x); /*C function that compute the argument in radian of a given complex of the form x+i*y*/
+
+		arg = arg + angle; /*Rotation of the current point*/
+
+		/*Calculation of the new x and y*/
+		inpoly.head->value.x<-cos(arg)*module;
+		inpoly.head->value.y<-sin(arg)*module;
+
+		inpoly.head = inpoly.head->next;
+
+	}
+
+	return inpoly;
+
+}

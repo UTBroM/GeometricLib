@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <bool.h>
 #include <string.h>
+#include <math.h>
 
 typedef enum{
 	INSIDE = 0,
@@ -204,6 +205,15 @@ void printPolygon(Polygon inpoly);
  * Return a char* (string)
  **/
 char* toString(Polygon inpoly);
+
+/**
+ * This function return the rotation of a given polygon by an angle and a point
+ * inpoly - Polygon
+ * inpoint - Point
+ * angle - double
+ * Return a Polygon
+ **/
+Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
 
 #endif /*__POLYGON_H__*/
 
