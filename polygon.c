@@ -364,7 +364,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 
 		inpoly.head = inpoly.head->next;
 
-		/*Vectorial product of the first point, the sign should be positive to continue (it would mean that the polygon turn always in the same direction)*/
+		/*Vectorial product of the last segments of outpoly, the sign should be positive to continue (it would mean that the polygon turn always in the same direction)*/
 
 		while (outpoly.size >= 2 && ((outpoly.head->next->value.x - outpoly.head->value.x) * (inpoly.head->value.y - outpoly.head->next->value.y) - (inpoly.head->value.x - outpoly.head->next->value.x) * (outpoly.head->next->value.y - outpoly.head->value.y) < 0))
 		{
