@@ -7,6 +7,7 @@ int main(int argc, char* argv[]) {
 	Point test = createPoint(-1,0.5);
 	int i;
 	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
+	char* string;
 	Intersection* testlol;
 	Status testing;
 
@@ -21,6 +22,9 @@ int main(int argc, char* argv[]) {
 
 	printf("Testing printPolygon\n");
 	printPolygon(lol);
+	string = toString(lol);
+	printf("Testing toString\n");
+	printf("%s\n", string);
 
 	polyloutre=createPolygon();
 	polyloutre=addTail(polyloutre, createPoint(-2,-1));
