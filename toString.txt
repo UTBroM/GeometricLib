@@ -1,0 +1,42 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+
+LEXICON
+========
+inpoly : the polygon wich will be printed
+i : integer
+x, y : double
+string : string
+
+ALGORITHM
+=========
+Data:  Polygon inpoly
+Return: string
+
+function toString (inpoly : Polygon) : string
+Begin
+	string <- "["
+
+	for i from 1 to size(inpoly)-1 do
+		x <- x(value(head(inpoly)))
+		y <- y(value(head(inpoly)))
+		string <- strcat(string, "[")
+		string <- strcat(string, x)
+		string <- strcat(string, ",")
+		string <- strcat(string, y)
+		string <- strcat(string, "],")
+
+		head(inpoly) <- next(head(inpoly))
+	done
+
+	string <- strcat(string, "[")
+	string <- strcat(string, x)
+	string <- strcat(string, ",")
+	string <- strcat(string, y)
+	string <- strcat(string, "]]")
+
+	toString <- string
+
+End
