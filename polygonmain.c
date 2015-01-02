@@ -19,6 +19,9 @@ int main(int argc, char* argv[]) {
 	lol=addPoint(lol, createPoint(-1,2));
 	lol=addPoint(lol, createPoint(0,1));
 
+	printf("Testing printPolygon\n");
+	printPolygon(lol);
+
 	polyloutre=createPolygon();
 	polyloutre=addPoint(polyloutre, createPoint(-2,-1));
 	polyloutre=addPoint(polyloutre, createPoint(-1,3));
