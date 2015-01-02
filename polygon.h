@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <bool.h>
+#include <string.h>
 
 typedef enum{
 	INSIDE = 0,
