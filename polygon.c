@@ -469,12 +469,13 @@ void printPolygon(Polygon inpoly)
 char* toString(Polygon inpoly)
 {
 	char* string;
+	double x,y;
 	string = "[";
 
 	for (i=1; i<inpoly.size-1; i++)
 	{
-		x = inpoly.head->value.x
-		y = inpoly.head->value.y
+		x = inpoly.head->value.x;
+		y = inpoly.head->value.y;
 
 		string = strcat(string, "[");
 		string = strcat(string, x);
