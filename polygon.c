@@ -56,10 +56,10 @@ Polygon addPoint(Polygon inpoly, Point inpoint, int index)
 	{
 		newpoly.head = newpoly.head->next;
 	}
-	newelem.next = newpoly.head->next;
+	newelem->next = newpoly.head->next;
 	newpoly.head->next->prev = newelem;
 	newpoly.head->next = newelem;
-	newelem.prev = newpoly.head;
+	newelem->prev = newpoly.head;
 
 	inpoly.size++;
 
