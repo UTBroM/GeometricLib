@@ -42,7 +42,28 @@ Polygon createPolygon(){
  **/
 Polygon addPoint(Polygon inpoly, Point inpoint, int index)
 {
+	int i;
+	Polygon newpoly;
+	PointElement* newelem = NULL;
 
+	newpoly.head = inpoly.head;
+	newpoly.size = inpoly.size;
+	
+	newelem=(PointElement*)malloc(sizeof(PointElement));
+	newelem->value = inpoint;
+
+	for (i=0; i<index-2; i++)
+	{
+		newpoly.head = newpoly.head->next;
+	}
+	newelem.next = newpoly.head->next;
+	newpoly.head->next-> = newelem;
+	newpoly.head->next = newelem;
+	newelem.prev = newpoly.head;
+
+	inpoly.size++;
+
+	return inpoly;
 }
 
 /**
