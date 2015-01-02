@@ -160,5 +160,13 @@ Status containsPolygon (Polygon poly1, Polygon poly2);
  **/
 Polygon scalePolygon(Polygon inpoly, float factor);
 
+/**
+ * Function wich compute the central symmetry of  a specified polygon according to a reference point
+ * inpoly - Polygon
+ * inpoint - reference Point
+ * Return a Polygon
+ **/
+Polygon centralSymmetry(Polygon inpoly, Point inpoint);
+
 #endif /*__POLYGON_H__*/
 
