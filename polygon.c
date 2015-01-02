@@ -32,6 +32,19 @@ Polygon createPolygon(){
 	return newpoly;
 
 }
+
+/**
+ * Function wich add a point at a given place in an existing polygon
+ * inpoly - Polygon
+ * inpoint - Point
+ * index - interger wich give the place where the point need to be placed
+ * Return a Polygon
+ **/
+Polygon addPoint(Polygon inpoly, Point inpoint, int index)
+{
+
+}
+
 /**
  * Function wich add a point at the end of an existing polygon
  * inpoly - Polygon
@@ -39,7 +52,7 @@ Polygon createPolygon(){
  * newelem - new Point in the Polygon
  * return a new polygon
  */
-Polygon addPoint(Polygon inpoly, Point inpoint)
+Polygon addTail(Polygon inpoly, Point inpoint)
 {
 
 	Polygon newpoly;
@@ -320,9 +333,9 @@ Polygon convexhullPolygon(Polygon inpoly)
 	Polygon outpoly = createPolygon(outpoly);
 	int i;
 
-	addPoint(outpoly, inpoly.head->value);
+	addTail(outpoly, inpoly.head->value);
 	inpoly.head = inpoly.head->next;
-	addPoint(outpoly, inpoly.head->value);
+	addTail(outpoly, inpoly.head->value);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
@@ -333,7 +346,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 			removeTail(outpoly);
 		}
 
-		addPoint(outpoly, inpoly.head->value);
+		addTail(outpoly, inpoly.head->value);
 
 	}
 
@@ -362,7 +375,7 @@ Polygon centralSymmetry(Polygon inpoly, Point inpoint)
 		newy = 2 * inpoint.y - oldy;
 
 		newpoint = createPoint(newx,newy);
-		addPoint(outpoly, newpoint);
+		addTail(outpoly, newpoint);
 
 		inpoly.head = inpoly.head->next;
 	}
