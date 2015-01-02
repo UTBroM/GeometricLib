@@ -35,6 +35,8 @@ Begin
 		/*Calculation of the new x and y*/
 		x(value(head(inpoly)))<-cos(arg)*module 
 		y(value(head(inpoly)))<-sin(arg)*module
+		
+		head(inpoly) <- next(head(inpoly))
 
 	done
 
