@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol, polyloutre, convexpoly;
+	Polygon lol, polyloutre, convexpoly, biglol;
 	Point test = createPoint(-1,0.5);
 	int i;
 	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
@@ -115,6 +115,11 @@ int main(int argc, char* argv[]) {
 		convexpoly.head=convexpoly.head->next;
 
 	}
+
+	printPolygon(lol);
+	biglol=scalePolygon(lol,3.2);
+	printPolygon(biglol);
+
 
 	free(testlol);
 
