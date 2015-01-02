@@ -89,12 +89,21 @@ Point createPoint(double abscisse, double ordinate);
 Polygon createPolygon();
 
 /**
+ * Function wich add a point at a given place in an existing polygon
+ * inpoly - Polygon
+ * inpoint - Point
+ * index - interger wich give the place where the point need to be placed
+ * Return a Polygon
+ **/
+Polygon addPoint(Polygon inpoly, Point inpoint, int index);
+
+/**
  * Function wich add a point at the end of an existing polygon
  * inpoly - Polygon
  * inpoint - Point
  * return a new polygon
  */
-Polygon addPoint(Polygon inpoly, Point inpoint);
+Polygon addTail(Polygon inpoly, Point inpoint);
 
 /**
  * Function wich remove a point at a given place in an existing polygon
