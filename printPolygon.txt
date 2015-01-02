@@ -17,7 +17,7 @@ Return: nothing
 Procedure printPolygon (inpoly : Polygon)
 Begin
 	print("[")
-	for i from 1 to size(inpoly) do
+	for i from 1 to size(inpoly)-1 do
 		x <- x(value(head(inpoly)))
 		y <- y(value(head(inpoly)))
 		print("[")
@@ -25,6 +25,14 @@ Begin
 		print(",")
 		print(y)
 		print("],")
+
+		head(inpoly) <- next(head(inpoly))
 	done
-	print("]")
+
+	print("[")
+	print(x)
+	print(",")
+	print(y)
+	print("]]")
+
 End
