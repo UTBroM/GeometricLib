@@ -64,21 +64,29 @@ int main(int argc, char* argv[]) {
 	printf("\n==================================\n\nTest d'une intersection");
 
 	printf("\n\nEntrez les coordonées du point 1 :\n	x:");
-	scanf("%lf",&x1);
+	x1=-1;
+	printf("%f",x1);
 	printf("\n	y:");
-	scanf("%lf",&y1);
+	y1=0.25;
+	printf("%f",y1);
 	printf("\n\nEntrez les coordonées du point 2 :\n	x:");
-	scanf("%lf",&x2);
+	x2=2.1;
+	printf("%f",x2);
 	printf("\n	y:");
-	scanf("%lf",&y2);
+	y2=-1.4;
+	printf("%f",y2);
 	printf("\n\nEntrez les coordonées du point 3 :\n	x:");
-	scanf("%lf",&x3);
+	x3=-1.4;
+	printf("%f",x3);
 	printf("\n	y:");
-	scanf("%lf",&y3);
+	y3=-0.45;
+	printf("%f",y3);
 	printf("\n\nEntrez les coordonées du point 4 :\n	x:");
-	scanf("%lf",&x4);
+	x4=12;
+	printf("%f",x4);
 	printf("\n	y:");
-	scanf("%lf",&y4);
+	y4=11.45;
+	printf("%f",y4);
 
 	testlol = segmentsCross(createPoint(x1,y1), createPoint(x2,y2), createPoint(x3,y3), createPoint(x4,y4));
 
