@@ -400,7 +400,7 @@ Polygon centralSymmetry(Polygon inpoly, Point inpoint)
 		newy = 2 * inpoint.y - oldy;
 
 		newpoint = createPoint(newx,newy);
-		addTail(outpoly, newpoint);
+		outpoly = addTail(outpoly, newpoint);
 
 		inpoly.head = inpoly.head->next;
 	}
