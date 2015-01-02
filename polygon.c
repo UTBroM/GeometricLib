@@ -327,7 +327,6 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
  **/
 Polygon scalePolygon(Polygon inpoly, float factor)
 {
-	PointElement* referencePoint;
 	int i;
 
 	for (i = 1; i < inpoly.size - 1; i++)
