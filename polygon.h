@@ -197,5 +197,12 @@ void printPoint(Point inpoint);
  **/
 void printPolygon(Polygon inpoly);
 
+/**
+ * This function is like printPolygon but it's a function
+ * inpoly - Polygon
+ * Return a char* (string)
+ **/
+char* toString(Polygon inpoly);
+
 #endif /*__POLYGON_H__*/
 
