@@ -351,7 +351,7 @@ Polygon scalePolygon(Polygon inpoly, float factor)
  **/
 Polygon convexhullPolygon(Polygon inpoly)
 {
-	Polygon outpoly = createPolygon(outpoly);
+	Polygon outpoly = createPolygon();
 	int i;
 
 	addTail(outpoly, inpoly.head->value);
