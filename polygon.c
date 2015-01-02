@@ -341,3 +341,32 @@ Polygon convexhullPolygon(Polygon inpoly)
 
 }
 
+/**
+ * Function wich compute the central symmetry of  a specified polygon according to a reference point
+ * inpoly - Polygon
+ * inpoint - reference Point
+ * Return a Polygon
+ **/
+Polygon centralSymmetry(Polygon inpoly, Point inpoint)
+{
+	Polygon outpoly=createPolygon(outpoly);
+	Point newpoint;
+	double oldx, oldy, newx, newy;
+	int i;
+
+	for (i=1; i < inpoly.size; i++)
+	{
+		oldx = inpoly.head->value.x;
+		oldy = inpoly.head->value.y;
+		newx = 2 * inpoint.x - oldx;
+		newy = 2 * inpoint.y - oldy;
+
+		newpoint = createPoint(newx,newy);
+		addPoint(outpoly, newpoint);
+
+		inpoly.head = inpoly.head->next;
+	}
+
+	return outpoly;
+}
+
