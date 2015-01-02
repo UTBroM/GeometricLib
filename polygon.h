@@ -52,14 +52,14 @@ typedef struct {
 }Polygon;
 
 /**
- * Decalration of vecteur with his  x and y components
+ * Decalration of vector with his  x and y components
  * We now that it's maybe useless with the existance of Point but it's better to make a difference between this two structures of data
  **/
 typedef struct {
 
 	double x;
 	double y;
-}Vecteur;
+}Vector;
 
 /**
  * Declaration of the Intersection
@@ -168,6 +168,14 @@ Status containsPolygon (Polygon poly1, Polygon poly2);
  * Return a Polygon
  **/
 Polygon scalePolygon(Polygon inpoly, float factor);
+
+/**
+ * Function wich translate a polygon from P1 to P2
+ * P1, P2 - Point
+ * Return a Polygon
+ * /!\ the translation is from P1 to P2
+ **/
+Polygon translatePolygon(Polygon inpoly, Point P1, Point P2);
 
 /**
  * Function wich compute the central symmetry of  a specified polygon according to a reference point
