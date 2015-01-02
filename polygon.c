@@ -379,3 +379,22 @@ void printPoint(Point inpoint)
 	printf("[%.2f,%.2f]", inpoint.x, inpoint.y);
 }
 
+/**
+ * Procedure wich print coordinates of all points in a Polygon
+ * inpoly - Polygon
+ **/
+void printPolygon(Polygon inpoly)
+{
+	int i;
+
+	printf("[");
+	for (i=1; i < (inpoly.size-1); i++)
+	{
+		printPoint(inpoly.head->value);
+		printf(",");
+
+		inpoly.head = inpoly.head->next;
+	}
+	printPoint(inpoly.head->value);
+	printf("]\n");
+}
