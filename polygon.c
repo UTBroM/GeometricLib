@@ -329,7 +329,7 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 {
 	int i;
 
-	for (i = 1; i < inpoly.size - 1; i++)
+	for (i = 1; i < inpoly.size; i++)
 	{
 		inpoly.head = inpoly.head->next;
 
