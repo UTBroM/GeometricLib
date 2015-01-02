@@ -340,6 +340,31 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 }
 
 /**
+ * Function wich translate a polygon from P1 to P2
+ * P1, P2 - Point
+ * Return a Polygon
+ * /!\ the translation is from P1 to P2
+ **/
+Polygon translatePolygon(Polygon inpoly, Point P1, Point P2)
+{
+	Vector P1toP2;
+	int i;
+
+	P1toP2.x = P2.x - P1.x;
+	P1toP2.y = P2.y - P1.y;
+	
+	for (i=1; i< inpoly.size; i++)
+	{
+		inpoly.head->value.x = inpoly.head->value.x + P1toP2.x;
+		inpoly.head->value.y = inpoly.head->value.y + P1toP2.y;
+
+		inpoly.head = inpoly.head->next;
+	}
+	
+	return inpoly;
+}
+
+/**
  * Function wich return the convex hull of a polygon
  * inpoly - Polygon 
  * Return outpoly
