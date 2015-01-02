@@ -1,0 +1,30 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : Decembre 2014
+ **/
+
+
+LEXICON
+========
+inpoly : the polygon wich will be printed
+i : integer
+x, y : double
+
+ALGORITHM
+=========
+Data:  Polygon inpoly
+Return: nothing
+
+Procedure printPolygon (inpoly : Polygon)
+Begin
+	print("[")
+	for i from 1 to size(inpoly) do
+		x <- x(value(head(inpoly)))
+		y <- y(value(head(inpoly)))
+		print("[")
+		print(x)
+		print(",")
+		print(y)
+		print("],")
+	done
+	print("]")
+End
