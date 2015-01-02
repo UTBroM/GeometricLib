@@ -430,7 +430,7 @@ void printPolygon(Polygon inpoly)
 	int i;
 
 	printf("[");
-	for (i=1; i < (inpoly.size-1); i++)
+	for (i=1; i < (inpoly.size); i++)
 	{
 		printPoint(inpoly.head->value);
 		printf(",");
