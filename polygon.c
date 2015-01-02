@@ -329,17 +329,14 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 {
 	PointElement* referencePoint;
 	int i;
-	referencePoint = inpoly.head;
 
 	for (i = 1; i < inpoly.size - 1; i++)
 	{
 		inpoly.head = inpoly.head->next;
 
-		inpoly.head->value.x = inpoly.head->value.x + factor * ((inpoly.head->value.x)-(referencePoint->value.x));
-		inpoly.head->value.y = inpoly.head->value.y + factor * ((inpoly.head->value.y)-(referencePoint->value.y));
+		inpoly.head->value.x = factor * inpoly.head->value.x;
+		inpoly.head->value.y = factor * inpoly.head->value.y;
 	}
-
-	inpoly.head = referencePoint;
 
 	return inpoly;
 }
