@@ -29,7 +29,7 @@ Begin
 
 		addPoint(outpoly, newpoint)
 
-		head(inpoly) <- next(inpoly)
+		head(inpoly) <- next(head(inpoly))
 
 	done
 
