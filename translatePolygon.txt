@@ -20,12 +20,12 @@ Return: inpoly
 
 function translatePolygon(inpoly : Polygon, P1: Point, P2 : Point) : Polygon
 Begin
-	P1toP2.x <- P2.x - P1.x
-	P1toP2.y <- P2.y - P1.y
+	x(P1toP2) <- x(P2) - x(P1)
+	y(P1toP2) <- y(P2) - y(P1)
 	
 	for i from 1 to size(inpoly) do
-		x(value(head(inpoly))) <- x(value(head(inpoly))) + P1toP2.x
-		y(value(head(inpoly))) <- y(value(head(inpoly))) + P1toP2.y
+		x(value(head(inpoly))) <- x(value(head(inpoly))) + x(P1toP2)
+		y(value(head(inpoly))) <- y(value(head(inpoly))) + y(P1toP2)
 
 		head(inpoly) <- next(head(inpoly))
 	done
