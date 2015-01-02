@@ -11,22 +11,22 @@ int main(int argc, char* argv[]) {
 	Status testing;
 
 	lol=createPolygon();
-	lol=addPoint(lol, createPoint(0,0));
-	lol=addPoint(lol, createPoint(1,0));
-	lol=addPoint(lol, createPoint(0.5,0.5));
-	lol=addPoint(lol, createPoint(1,1));
-	lol=addPoint(lol, createPoint(1,2));
-	lol=addPoint(lol, createPoint(-1,2));
-	lol=addPoint(lol, createPoint(0,1));
+	lol=addTail(lol, createPoint(0,0));
+	lol=addTail(lol, createPoint(1,0));
+	lol=addTail(lol, createPoint(0.5,0.5));
+	lol=addTail(lol, createPoint(1,1));
+	lol=addTail(lol, createPoint(1,2));
+	lol=addTail(lol, createPoint(-1,2));
+	lol=addTail(lol, createPoint(0,1));
 
 	printf("Testing printPolygon\n");
 	printPolygon(lol);
 
 	polyloutre=createPolygon();
-	polyloutre=addPoint(polyloutre, createPoint(-2,-1));
-	polyloutre=addPoint(polyloutre, createPoint(-1,3));
-	polyloutre=addPoint(polyloutre, createPoint(2,3));
-	polyloutre=addPoint(polyloutre, createPoint(2,-2));
+	polyloutre=addTail(polyloutre, createPoint(-2,-1));
+	polyloutre=addTail(polyloutre, createPoint(-1,3));
+	polyloutre=addTail(polyloutre, createPoint(2,3));
+	polyloutre=addTail(polyloutre, createPoint(2,-2));
 
 	printf("\n\ntaille : %d", lol.size);
 
