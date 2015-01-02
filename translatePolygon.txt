@@ -5,19 +5,30 @@
 LEXICON
 ========
 inpoly: the polygon wich will be translated
-trvector: vector to 
+P1: point 1 wich we need to build a vector
+P2: point 2 wich we need to build a vector
+P1toP2 : vector for translation
+/!\ translation from P1 to P2
+
 
 ALGORITHM
 =========
 Data:   Polygon: inpoly
-        Vector: trvector
+        Point: P1, P2
 Return: inpoly
 
 
-function translatePolygon(inpoly : Polygon, trvector : Vector) : Polygon
+function translatePolygon(inpoly : Polygon, P1: Point, P2 : Point) : Polygon
 Begin
+	P1toP2.x <- P1.x - P2.x
+	P1toP2.y <- P1.y - P2.y
 	
-	
+	for i from 1 to size(inpoly) do
+		x(value(head(inpoly))) <- x(value(head(inpoly))) + P1toP2.x
+		y(value(head(inpoly))) <- y(value(head(inpoly))) + P1toP2.y
+
+		head(inpoly) <- next(head(inpoly))
+	done
 
 	translatePolygon <- inpoly
 End
