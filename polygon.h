@@ -213,7 +213,7 @@ char* toString(Polygon inpoly);
  * angle - double
  * Return a Polygon
  **/
-Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
+Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle);
 
 #endif /*__POLYGON_H__*/
 
