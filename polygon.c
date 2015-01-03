@@ -563,17 +563,20 @@ Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
 	double x, y, module, arg;
 	int i;
 
+	/*Go through ech point and compute the rotation*/
 	for(i=1;i<=inpoly.size;i++){
 
+		/*compute the distance between the reference point and the current point on x and y*/
 		x = inpoly.head->value.x - xref;
 		y = inpoly.head->value.y - yref;
 
+		/*We use complex numbers because the module stay the same and it's easy to change the argument and fall back to coordinates*/
 		module = sqrt(x*x + y*y); /*Computation of the module*/
 		arg = atan2(y,x); /*C function that compute the argument in radian of a given complex of the form x+i*y*/
 
 		arg = arg + angle; /*Rotation of the current point*/
 
-		/*Calculation of the new x and y*/
+		/*Computation of the new x and y*/
 		inpoly.head->value.x=cos(arg)*module + xref;
 		inpoly.head->value.y=sin(arg)*module + yref;
 
