@@ -520,6 +520,7 @@ Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
 	double xref = inpoint.x;
 	double yref =inpoint.y;
 	double x, y, module, arg;
+	int i;
 
 	for(i=1;i<=inpoly.size;i++){
 
