@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol, polyloutre, convexpoly, biglol, symetriclol;
+	Polygon lol, polyloutre, convexpoly, biglol, symetriclol, rotatelol;
 	Point test = createPoint(-1,0.5);
 	Point P1, P2;
 	int i;
@@ -138,6 +138,9 @@ int main(int argc, char* argv[]) {
 	symetriclol = centralSymmetry(lol, createPoint(0,0));
 	printPolygon(symetriclol);
 
+	printf("\nTesting the rotation with an angle of 2.1rad around the point (2,4)");
+	rotatelol = rotatePolygon(lol, createPoint(0,0), 2.1);
+	printPolygon(rotatelol);
 
 	free(testlol);
 
