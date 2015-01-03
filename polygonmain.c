@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol, polyloutre, convexpoly, biglol, symetriclol, rotatelol;
+	Polygon lol, polyloutre, convexpoly, biglol, symetriclol, rotatelol, testingpoly;
 	Point test = createPoint(-1,0.5);
 	Point P1, P2;
 	int i;
