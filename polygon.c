@@ -532,8 +532,8 @@ Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
 		arg = arg + angle; /*Rotation of the current point*/
 
 		/*Calculation of the new x and y*/
-		inpoly.head->value.x<-cos(arg)*module;
-		inpoly.head->value.y<-sin(arg)*module;
+		inpoly.head->value.x=cos(arg)*module;
+		inpoly.head->value.y=sin(arg)*module;
 
 		inpoly.head = inpoly.head->next;
 
