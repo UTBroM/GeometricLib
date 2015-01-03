@@ -289,6 +289,29 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 	int i=0,j=0;
 	BOOL inter=FALSE;
 
+	/*We first test if both polygons are equal*/
+	if(poly1.size == poly2.size){
+
+		for(i=0;i<poly1.size;i++){
+
+			if(poly1.head->value.x == poly2.head->value.x && poly1.head->value.y == poly2.head->value.y){
+
+				poly1.head = poly1.head->next;
+				poly2.head = poly2.head->next;
+
+			}
+			else{
+
+				return EQUAL;
+
+			}
+
+		}
+
+	}
+
+	i=0;
+
 	while(i<poly1.size && !inter){
 
 		j=0;

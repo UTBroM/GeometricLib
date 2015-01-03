@@ -15,7 +15,8 @@ typedef enum{
 	INSIDE = 0,
 	OUTSIDE = 1,
 	INTERSECT = 2,
-	ENCLOSING = 3
+	ENCLOSING = 3,
+	EQUAL = 4
 }Status;
 
 /**
