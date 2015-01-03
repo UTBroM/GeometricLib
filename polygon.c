@@ -468,9 +468,10 @@ void printPolygon(Polygon inpoly)
  **/
 char* toString(Polygon inpoly)
 {
-	char *string;
-	char x,y;
+	char *string, *bufferX, *bufferY;
+	double x, y;
 	int i;
+	int decimal, sign; /*useless arguments in our case*/
 
 	string = (char*)malloc(sizeof(char)*2);
 	string[0] = '[';
@@ -478,17 +479,17 @@ char* toString(Polygon inpoly)
 
 	for (i=1; i<inpoly.size-1; i++)
 	{
-	
-		x = (char)inpoly.head->value.x;
-		y = (char)inpoly.head->value.y;
+		bufferX = ecvt(x, 2, &decimal, &sign);
+		bufferY = ecvt(y, 2, &decimal, &sign);
 
-		string = realloc(string, sizeof(char)*(strlen(x)+strlen(y)+4));
+		string = realloc(string, sizeof(char)*(strlen(bufferX)+strlen(bufferY)+4));
 
-		sprintf(string, "[%d,%d],", x, y);
+		sprintf(string, "[%.2f,%.2f],", x, y);
 
 		inpoly.head = inpoly.head->next;
 	}
-	sprintf(string, "[%d,%d]]", x, y);
+
+	sprintf(string, "[%.2f,%.2f]]", x, y);
 	
 	return string;
 }
