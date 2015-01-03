@@ -353,7 +353,7 @@ Polygon translatePolygon(Polygon inpoly, Point P1, Point P2)
 	P1toP2.x = P2.x - P1.x;
 	P1toP2.y = P2.y - P1.y;
 	
-	for (i=1; i< inpoly.size; i++)
+	for (i=0; i< inpoly.size; i++)
 	{
 		inpoly.head->value.x = inpoly.head->value.x + P1toP2.x;
 		inpoly.head->value.y = inpoly.head->value.y + P1toP2.y;
