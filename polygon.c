@@ -465,44 +465,37 @@ void printPolygon(Polygon inpoly)
  * This function is like printPolygon but it's a function
  * inpoly - Polygon
  * Return a char* (string)
+ * /!\ We have a buffer and we can't manage double wich are greater than the lenght of the BUFFER
  **/
 char* toString(Polygon inpoly)
 {
-	char *string;
+	char* string;
+	char BUFFER[1000];
 	double x, y;
-	/*char x1[50];
-	char y1[50];*/
 	int i;
 
-	string = (char*)malloc(sizeof(char)*100);
+	string = (char*)malloc(sizeof(char)*2);
 	string[0] = '[';
-	/*length = 0;*/
+	string[1] = '\0';
 
-	for (i=1; i<inpoly.size-1; i++)
+	for (i=1; i<inpoly.size; i++)
 	{
 		x = inpoly.head->value.x;
 		y = inpoly.head->value.y;
 
-		/*length = length + sprintf(x1, "%.2f", x);
-		length = length + sprintf(y1, "%.2f", y);
+		string = realloc(string, sizeof(char)*(strlen(string)+strlen(BUFFER)+1));
 
-		string = realloc(string, sizeof(char)*(length+4));*/
-
-		sprintf(string, "[%.2f,%.2f],", x, y);
-
+		sprintf(BUFFER, "[%.2f,%.2f],", x, y);
+		strcat(string,BUFFER);
 		inpoly.head = inpoly.head->next;
-		/*x1[0] = '\0';
-		y1[0] = '\0';*/
 	}
-
- 	/*x = inpoly.head->value.x;
-	length = length + sprintf(x1, "%.2f", x);
+	x = inpoly.head->value.x;
 	y = inpoly.head->value.y;
-	length = length + sprintf(y1, "%.2f", y);
 
-	string = realloc(string, sizeof(char)*(length+4));*/
+	string = realloc(string, sizeof(char)*(strlen(string)+strlen(BUFFER)+1));
 
-	sprintf(string, "[%.2f,%.2f]]", x, y);
+	sprintf(BUFFER, "[%.2f,%.2f]]", x, y);
+	strcat(string,BUFFER);
 	
 	return string;
 }
