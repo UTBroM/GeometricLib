@@ -417,6 +417,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 	Polygon outpoly = createPolygon();
 	int i;
 
+	/*First the 2 first points are added to the new polygon so we have a first segment*/
 	outpoly = addTail(outpoly, inpoly.head->value);
 	inpoly.head = inpoly.head->next;
 	outpoly = addTail(outpoly, inpoly.head->value);
@@ -431,11 +432,13 @@ Polygon convexhullPolygon(Polygon inpoly)
 		while (outpoly.size >= 2 && ((outpoly.head->next->value.x - outpoly.head->value.x) * (inpoly.head->value.y - outpoly.head->next->value.y) - (inpoly.head->value.x - outpoly.head->next->value.x) * (outpoly.head->next->value.y - outpoly.head->value.y) < 0))
 		{
 
+			/*If the shape turn in the wrong direction we delete the last point and test again with the previous point*/
 			outpoly.head = outpoly.head->prev;
 			outpoly = removePoint(outpoly,3);
 
 		}
 
+		/*if it's OK we go trough the next segment*/
 		outpoly = addPoint(outpoly, inpoly.head->value, 3);
 		outpoly.head = outpoly.head->next;
 
