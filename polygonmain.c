@@ -129,9 +129,12 @@ int main(int argc, char* argv[]) {
 	}
 
 	printPolygon(lol);
+
+	printf("\nTesting the scaling by a factor of 3.2\n");
 	biglol=scalePolygon(lol,3.2);
 	printPolygon(biglol);
 
+	printf("\nTesting the symmetry by the point (0,0)\n");
 	symetriclol = centralSymmetry(lol, createPoint(0,0));
 	printPolygon(symetriclol);
 
