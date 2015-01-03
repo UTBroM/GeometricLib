@@ -23,7 +23,7 @@ lib: $(LIB)
 
 $(EXEC): $(OBJ) $(LIB)
 	@echo "\n Generating the executable " $@
-	$(CC) $(OBJ) -l$(LIBNAME) $(LIBFLAGS) -o $@
+	$(CC) $(OBJ) -l$(LIBNAME) $(LIBFLAGS) -lm -o $@
 
 $(LIB): $(LIBOBJ)
 	@echo "\n Generating the library " $@
