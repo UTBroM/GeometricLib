@@ -306,8 +306,10 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 	/*We first test if both polygons are equal*/
 	if(poly1.size == poly2.size){
 
+		/*Check if the number of points is equal*/
 		for(i=0;i<poly1.size;i++){
 
+			/*Check if all the points are equal*/
 			if(poly1.head->value.x == poly2.head->value.x && poly1.head->value.y == poly2.head->value.y){
 
 				poly1.head = poly1.head->next;
@@ -326,6 +328,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 
 	i=0;
 
+	/*These 2 loops go trough each polygon and check if they are any intersections*/
 	while(i<poly1.size && !inter){
 
 		j=0;
@@ -348,6 +351,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 
 	}
 
+	/*Depending of the intersection we return the corresponding state*/
 	if(inter){return INTERSECT;} /*If there is any intersection the two polygons intersects*/
 	else if(containsPoint(poly2,poly1.head->value)){return ENCLOSING;} /*If any random point of the first polygon is contained then it is enclosing*/
 	else if(containsPoint(poly1,poly2.head->value)){return INSIDE;} /*If any random point of the second polygon is contained then it is inside*/
