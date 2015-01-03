@@ -479,6 +479,9 @@ char* toString(Polygon inpoly)
 
 	for (i=1; i<inpoly.size-1; i++)
 	{
+		x = inpoly.head->value.x;
+		y = inpoly.head->value.y;
+
 		bufferX = ecvt(x, 2, &decimal, &sign);
 		bufferY = ecvt(y, 2, &decimal, &sign);
 
