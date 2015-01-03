@@ -48,9 +48,11 @@ Polygon addPoint(Polygon inpoly, Point inpoint, int index)
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
 	
+	/*This newelem is the element we have to insert*/
 	newelem=(PointElement*)malloc(sizeof(PointElement));
 	newelem->value = inpoint;
 
+	/*Look for the element before the index where we want to insert newelem*/
 	for (i=0; i<index-2; i++)
 	{
 		newpoly.head = newpoly.head->next;
@@ -83,6 +85,7 @@ Polygon addTail(Polygon inpoly, Point inpoint)
 	newelem=(PointElement*)malloc(sizeof(PointElement));
 	newelem->value = inpoint;
 
+	/*Case when the polygon is empty*/
 	if(inpoly.head==NULL)
 	{
 
@@ -121,6 +124,7 @@ Polygon removePoint(Polygon inpoly, int index)
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
 
+	/*We look for the element's place we want to remove*/
 	for(i=0;i<index-1;i++)
 	{
 
@@ -156,8 +160,8 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
 	{
 
 		inter = NULL;
-
-		inter = segmentsCross(inpoly.head->value,inpoly.head->next->value,inpoint,createPoint(max(inpoly.head->value.x,inpoly.head->next->value.x)+10,inpoint.y)); /*Return the intersection of the current segment and a virtual horizontally segment draw from the testing point*/
+		/*Return the intersection of the current segment and a virtual horizontally segment draw from the testing point*/
+		inter = segmentsCross(inpoly.head->value,inpoly.head->next->value,inpoint,createPoint(max(inpoly.head->value.x,inpoly.head->next->value.x)+10,inpoint.y));
 
 		if(inter != NULL){
 
@@ -352,6 +356,7 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 {
 	int i;
 
+	/*this tricks is an improvement*/
 	for (i = 0; i < inpoly.size; i++)
 	{
 		inpoly.head = inpoly.head->next;
@@ -379,6 +384,7 @@ Polygon translatePolygon(Polygon inpoly, Point P1, Point P2)
 	
 	for (i=0; i< inpoly.size; i++)
 	{
+		/*Add the coordinate of the translation vector to each point of the polygon*/
 		inpoly.head->value.x = inpoly.head->value.x + P1toP2.x;
 		inpoly.head->value.y = inpoly.head->value.y + P1toP2.y;
 
@@ -488,7 +494,7 @@ void printPolygon(Polygon inpoly)
  * This function is like printPolygon but it's a function
  * inpoly - Polygon
  * Return a char* (string)
- * /!\ We have a buffer and we can't manage double wich are greater than the lenght of the BUFFER
+ * /!\ We have a buffer and we can't manage double wich are greater than the lenght of the BUFFER. That's can be improve.
  **/
 char* toString(Polygon inpoly)
 {
@@ -506,12 +512,14 @@ char* toString(Polygon inpoly)
 		x = inpoly.head->value.x;
 		y = inpoly.head->value.y;
 
+		/*Reallocation of memory to adapt it according to the lenght of the coordinates*/
 		string = realloc(string, sizeof(char)*(strlen(string)+strlen(BUFFER)+1));
 
 		sprintf(BUFFER, "[%.2f,%.2f],", x, y);
 		strcat(string,BUFFER);
 		inpoly.head = inpoly.head->next;
 	}
+	/*Same instruction than in the loop but we want to change the end of the string*/
 	x = inpoly.head->value.x;
 	y = inpoly.head->value.y;
 
