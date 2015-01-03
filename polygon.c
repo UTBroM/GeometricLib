@@ -43,20 +43,23 @@ Polygon addPoint(Polygon inpoly, Point inpoint, int index)
 {
 	int i;
 	Polygon newpoly;
-	PointElement* newelem = NULL;
+	PointElement* newelem = NULL; /*Create the new element*/
 
+	/*Replication of the old polygon*/
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
-	
-	/*This newelem is the element we have to insert*/
+
+	/*Allocation of the memory for the new element*/
 	newelem=(PointElement*)malloc(sizeof(PointElement));
 	newelem->value = inpoint;
 
-	/*Look for the element before the index where we want to insert newelem*/
+	/*This loop find the element just before the place we want to add the new point*/
 	for (i=0; i<index-2; i++)
 	{
 		newpoly.head = newpoly.head->next;
 	}
+
+	/*Linking of the different elements*/
 	newelem->next = newpoly.head->next;
 	newpoly.head->next->prev = newelem;
 	newpoly.head->next = newelem;
