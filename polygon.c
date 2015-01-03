@@ -125,10 +125,12 @@ Polygon removePoint(Polygon inpoly, int index)
 
 	int i;
 	Polygon newpoly;
+
+	/*Replication of the polygon*/
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
 
-	/*We look for the element's place we want to remove*/
+	/*We look for place of the element we want to remove*/
 	for(i=0;i<index-1;i++)
 	{
 
@@ -136,6 +138,7 @@ Polygon removePoint(Polygon inpoly, int index)
 
 	}
 
+	/*We link all the elements to bypass the element we want to throw. newpoly is used to save the adress of the old element in order to free the momory later*/
 	newpoly.head->prev->next = newpoly.head->next;
 	newpoly.head->next->prev = newpoly.head->prev;
 
