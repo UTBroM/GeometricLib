@@ -369,7 +369,7 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 {
 	int i;
 
-	/*this tricks is an improvement*/
+	/*Each coordinate is multiplicated by the factor resulting in a scaled polygon*/
 	for (i = 0; i < inpoly.size; i++)
 	{
 		inpoly.head = inpoly.head->next;
