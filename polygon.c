@@ -182,6 +182,7 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
  * Function wich return the intersection between two segments NULL otherwise
  * Point p1, p2, p3, p4
  * Return an pointer on an intersection
+ * /!\ p1 and p2 constitue the first segment, and p3, p4 the second
  **/
 Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 {
