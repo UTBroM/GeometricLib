@@ -267,6 +267,7 @@ Polygon removeTail (Polygon inpoly)
 
 	PointElement* tail = inpoly.head->prev;
 
+	/*Case when the polygon is bigger than one element*/
  	if (inpoly.size>1){
 
 		inpoly.head->prev = tail->prev;
@@ -275,6 +276,7 @@ Polygon removeTail (Polygon inpoly)
 		free(tail);
 
  	}
+	/*Case when the polygon is empty or contain 1 element*/
 	else{
 
 		inpoly.head = NULL;
