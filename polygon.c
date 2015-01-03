@@ -291,7 +291,7 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 
 	while(i<poly1.size && !inter){
 
-	j=0;
+		j=0;
 
 		while(j<poly2.size && !inter){
 
@@ -301,20 +301,20 @@ Status containsPolygon (Polygon poly1, Polygon poly2)
 
 			}
 
-		j++;
-		poly2.head = poly2.head->next;
+			j++;
+			poly2.head = poly2.head->next;
 
 		}
 
-	i++;
-	poly1.head = poly1.head->next;
+		i++;
+		poly1.head = poly1.head->next;
 
 	}
 
-	if(inter){return INTERSECT;}
-	else if(containsPoint(poly2,poly1.head->value)){return ENCLOSING;}
-	else if(containsPoint(poly1,poly2.head->value)){return INSIDE;}
-	else{return OUTSIDE;}
+	if(inter){return INTERSECT;} /*If there is any intersection the two polygons intersects*/
+	else if(containsPoint(poly2,poly1.head->value)){return ENCLOSING;} /*If any random point of the first polygon is contained then it is enclosing*/
+	else if(containsPoint(poly1,poly2.head->value)){return INSIDE;} /*If any random point of the second polygon is contained then it is inside*/
+	else{return OUTSIDE;} /*If anything else is false it is outside*/
 
 }
 
