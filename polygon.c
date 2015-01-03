@@ -83,6 +83,7 @@ Polygon addTail(Polygon inpoly, Point inpoint)
 	Polygon newpoly;
 	PointElement* newelem = NULL;
 
+	/*Same behavior as addPoint function*/
 	newpoly.head = inpoly.head;
 	newpoly.size = inpoly.size;
 	newelem=(PointElement*)malloc(sizeof(PointElement));
@@ -97,7 +98,7 @@ Polygon addTail(Polygon inpoly, Point inpoint)
 		newpoly.head->prev=newpoly.head;
 
 	}
-	else
+	else /*we link all the elements together*/
 	{
 
 		newelem->next = inpoly.head;
