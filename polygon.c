@@ -461,6 +461,7 @@ Polygon centralSymmetry(Polygon inpoly, Point inpoint)
 	double oldx, oldy, newx, newy;
 	int i;
 
+	/*Go trough all points and calculate the symmetry of each*/
 	for (i=0; i < inpoly.size; i++)
 	{
 		oldx = inpoly.head->value.x;
