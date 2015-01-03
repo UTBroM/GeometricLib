@@ -1,0 +1,22 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : January 2015
+ **/
+
+LEXICON
+========
+poly1, poly2: the polygons which we want to know if there are intersections between them
+outpoly : polygon wich is the result of the function
+
+ALGORITHM
+=========
+Data:   Polygon: poly1
+        Polygon: poly2
+Return: Polygon: outpoly
+
+
+function unionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
+Begin
+
+	
+
+End
