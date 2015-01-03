@@ -328,7 +328,7 @@ Polygon scalePolygon(Polygon inpoly, float factor)
 {
 	int i;
 
-	for (i = 1; i < inpoly.size; i++)
+	for (i = 0; i < inpoly.size; i++)
 	{
 		inpoly.head = inpoly.head->next;
 
@@ -416,7 +416,7 @@ Polygon centralSymmetry(Polygon inpoly, Point inpoint)
 	double oldx, oldy, newx, newy;
 	int i;
 
-	for (i=1; i < inpoly.size; i++)
+	for (i=0; i < inpoly.size; i++)
 	{
 		oldx = inpoly.head->value.x;
 		oldy = inpoly.head->value.y;
@@ -450,7 +450,7 @@ void printPolygon(Polygon inpoly)
 	int i;
 
 	printf("[");
-	for (i=1; i < (inpoly.size); i++)
+	for (i=1; i < inpoly.size; i++)
 	{
 		printPoint(inpoly.head->value);
 		printf(",");
