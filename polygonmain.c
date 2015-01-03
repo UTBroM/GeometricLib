@@ -5,6 +5,7 @@ int main(int argc, char* argv[]) {
 
 	Polygon lol, polyloutre, convexpoly, biglol, symetriclol;
 	Point test = createPoint(-1,0.5);
+	Point P1, P2;
 	int i;
 	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
 	char* string;
@@ -21,6 +22,12 @@ int main(int argc, char* argv[]) {
 	lol=addTail(lol, createPoint(0,1));
 
 	printf("Testing printPolygon\n");
+	printPolygon(lol);
+
+	printf("Testing translatePolygon\n");
+	P1 = createPoint(0,0);
+	P2 = createPoint(1,1);
+	lol = translatePolygon(lol, P1, P2);
 	printPolygon(lol);
 
 	printf("Testing toString\n");
