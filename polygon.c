@@ -469,22 +469,26 @@ void printPolygon(Polygon inpoly)
 char* toString(Polygon inpoly)
 {
 	char *string;
-	double x,y;
+	char x,y;
 	int i;
 
-	string = "[";
+	string = (char*)malloc(sizeof(char)*2);
+	string[0] = '[';
+	string[1] = '\0';
 
 	for (i=1; i<inpoly.size-1; i++)
 	{
-		x = inpoly.head->value.x;
-		y = inpoly.head->value.y;
+	
+		x = (char)inpoly.head->value.x;
+		y = (char)inpoly.head->value.y;
 
-		sprintf(string, "[%.2f,%.2f],", x, y);
+		string = realloc(string, sizeof(char)*(strlen(x)+strlen(y)+4));
+
+		sprintf(string, "[%d,%d],", x, y);
 
 		inpoly.head = inpoly.head->next;
 	}
-
-	sprintf(string, "[%.2f,%.2f]]", x, y);
+	sprintf(string, "[%d,%d]]", x, y);
 	
 	return string;
 }
