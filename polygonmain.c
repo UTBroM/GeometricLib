@@ -22,8 +22,9 @@ int main(int argc, char* argv[]) {
 
 	printf("Testing printPolygon\n");
 	printPolygon(lol);
-	string = toString(lol);
+
 	printf("Testing toString\n");
+	string = toString(lol);
 	printf("%s\n", string);
 
 	polyloutre=createPolygon();
