@@ -360,7 +360,6 @@ Polygon translatePolygon(Polygon inpoly, Point P1, Point P2)
 
 		inpoly.head = inpoly.head->next;
 	}
-	
 	return inpoly;
 }
 
