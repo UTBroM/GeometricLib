@@ -138,9 +138,19 @@ int main(int argc, char* argv[]) {
 	symetriclol = centralSymmetry(lol, createPoint(0,0));
 	printPolygon(symetriclol);
 
-	printf("\nTesting the rotation with an angle of 2.1rad around the point (2,4)");
-	rotatelol = rotatePolygon(lol, createPoint(0,0), 2.1);
+	printf("\nTesting the rotation with an angle of 2.1rad around the point (1,3)");
+	rotatelol = rotatePolygon(lol, createPoint(1,3), 2.1);
 	printPolygon(rotatelol);
+
+	testingpoly=createPolygon();
+	testingpoly=addTail(testingpoly, createPoint(-1,0));
+	testingpoly=addTail(testingpoly, createPoint(1,0));
+	testingpoly=addTail(testingpoly, createPoint(0,1));
+
+	printf("\nOther polygon\n");
+
+	testingpoly = rotatePolygon(testingpoly, createPoint(1,2), 3.14);
+	printPolygon(testingpoly);
 
 	free(testlol);
 
