@@ -470,23 +470,28 @@ char* toString(Polygon inpoly)
 {
 	char *string;
 	double x, y;
+	char x1[50];
+	char y1[50];
 	int i, length;
 
 	string = (char*)malloc(sizeof(char)*2);
 	string[0] = '[';
-	string[1] = '\0';
-	length = 30;
+	length = 0;
 
 	for (i=1; i<inpoly.size-1; i++)
 	{
 		x = inpoly.head->value.x;
+		length = length + sprintf(x1, "%.2f", x);
 		y = inpoly.head->value.y;
+		length = length + sprintf(y1, "%.2f", y);
 
 		string = realloc(string, sizeof(char)*(length+4));
 
 		length = length + sprintf(string, "[%.2f,%.2f],", x, y);
 
 		inpoly.head = inpoly.head->next;
+		free(x1);
+		free(y1);
 	}
 
 
