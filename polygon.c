@@ -589,3 +589,39 @@ Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle)
 	return inpoly;
 
 }
+
+/**
+ * This function return the union of two Polygons
+ * poly1 - Polygon
+ * poly2 - Polygon
+ * Return a Polygon
+ **/
+Polygon unionPolygons(Polygon poly1, Polygon poly2)
+{
+
+	int i;
+	Polygon outpoly = createPolygon();
+
+	/*First add all points of the both polygon in a new one*/
+
+	for(i=0;i<poly1.size;i++){
+
+		addTail(outpoly, poly1.head->value);
+		poly1.head = poly1.head->next;
+
+	}
+
+	for(i=1;poly2.size;i++){
+
+		addTail(outpoly, poly2.head->value);
+		poly2.head = poly2.head->next;
+
+	}
+
+	/*Compute the convex hull of this new polygon*/
+
+	outpoly = convexhullPolygon(outpoly);
+
+	return outpoly;
+
+}

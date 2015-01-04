@@ -216,5 +216,13 @@ char* toString(Polygon inpoly);
  **/
 Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle);
 
+/**
+ * This function return the union of two Polygons
+ * poly1 - Polygon
+ * poly2 - Polygon
+ * Return a Polygon
+ **/
+Polygon unionPolygons(Polygon poly1, Polygon poly2);
+
 #endif /*__POLYGON_H__*/
 
