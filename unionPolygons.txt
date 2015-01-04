@@ -1,25 +1,3 @@
-0- Vérifier que le 1er point de a n'est pas dans b si oui trouver le 1er qui est à l'extérieur
-1- Parcourir le premier polygone (a) tout en créant un nouveau polygone (c)
-2- Si un segment de a coupe un segment de l'autre polygone (b) alors on stocke dans un nouveau type comprenant:
-
-	- Les coordonnées de l'intersection
-	- Les coordonnées des 4 points en rapport avec l'intersection associés à leur polygone comme ça :
-
-		- inpointa	(Point duquel on vient sur le poly a)
-		- outpointa	(Point suivant du poly a avec outpoint = next(a))
-		- inpointb
-		- outpointb
-
-3- On vérifie si le segment inpointa -> intersection ne crée pas de nouvelle intersection si non on cherche l'intersection suivante et on recommence
-4- On continue c avec l'intersection
-5- On regarde si inpointb ou outpointb se situe à l'intérieur de a si il y en a un on choisis le point à l'extérieur pour la suite
-6- On test si le segment intersection en cours -> inpointb crée une intersection si oui on regarde si intersection préc -> new intersection crée encore une intersection si oui on cherche une ou ca marche si aucune alors on recommence avec outpointb
-
-7- On regarde quel est le segment qui se trouve à l'extérieur d'au moins un polygone (on dit que se trouver sur un polygone compte comme à l'intérieur)
-
-8- On continue c avec ce nouveau point
-9- Pour la suite on switch sur l'autre polygone et on recommence jusqu'a ce que next(c) = c
-
 /** Author : Paul TREHIOU & Victor SENE
  *  Date : Decembre 2014
  **/
@@ -40,37 +18,25 @@ Return: Polygon: outpoly
 function unionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
 Begin
 
-	//Step 0
-	while(containsPoint(poly2, value(head(poly1)))) do
+	/*First add all points of the both polygon in a new one*/
 
-		head(poly1) <- next(poly1)
+	for i from 1 to size(poly1) do
 
-	done
-
-	//Step 1
-	addpoint(outpoly, value(head(poly1)))
-	head(poly1) <- next(poly1)
-
-	while(not(containsPoint(poly2, value(head(poly1))))) then
-
-		addpoint(outpoly, value(head(poly1)))
-		head(poly1) <- next(poly1)
-
-	end if
-
-	//Step 2
-	while (intersectionpoint <- segmentsCross(value(head(poly1)), value(next(poly1)), value(head(poly2)), value(next(poly2)))) = NULL do
-
-		head(poly2) <- next(poly2)
+		inserttail(outpoly, value(head(poly1)))
+		head(poly1) <- next(head(poly1))
 
 	done
 
-	//Step 3
-	while (intersectionpoint <- segmentsCross(value(head(poly1)), value(next(poly1)), value(head(poly2)), value(next(poly2)))) = NULL do
+	for i from 1 to size(poly2) do
 
-		head(poly2) <- next(poly2)
+		inserttail(outpoly, value(head(poly2)))
+		head(poly2) <- next(head(poly2))
 
 	done
+
+	/*Compute the convex hull of this naw polygon*/
+
+	outpoly <- convexhullPolygon(outpoly)
 
 End
 
