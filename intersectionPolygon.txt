@@ -17,6 +17,13 @@ Return: Polygon: outpoly
 function unionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
 Begin
 
-	
+	for i from 1 to size(poly1) do
+		for j from 1 to size(poly2) do
+			intersect = segmentsCross(value(head(poly1)),value(next(head(poly1))),value(head(poly)),valu2e(next(head(poly2))))
+			if intersect!=NULL then
+				newpoly = addTail(newpoly, i)
+				
+		done
+	done
 
 End
