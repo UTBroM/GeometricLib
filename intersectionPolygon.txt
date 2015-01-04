@@ -14,16 +14,34 @@ Data:   Polygon: poly1
 Return: Polygon: outpoly
 
 
-function unionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
+function intersectionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
 Begin
 
 	for i from 1 to size(poly1) do
 		for j from 1 to size(poly2) do
 			intersect = segmentsCross(value(head(poly1)),value(next(head(poly1))),value(head(poly)),valu2e(next(head(poly2))))
-			if intersect!=NULL then
-				newpoly = addTail(newpoly, i)
-				
+			intersectPoint = value(intersect)
+			if intersect != NULL then
+				newpoly = addTail(newpoly, intersectPoint)
+
+				if inIntersect = 1 then 
+					inIntersect = 0 
+				else
+					inIntersect =1
+				endif
+			else
+				if inIntersect = 1 then
+					if containsPoint(poly2, a1(intersect)) then
+						newpoly = addTail(newpoly, a1(intersect))
+					endif
+					if containsPoint(poly2, a2(intersect)) then
+						newpoly = addTail(newpoly, a2(intersect))
+					endif
+				endif
+			endif
+			head(poly2) = next(head(poly2))
 		done
+		head(poly1) = next(head(poly1))
 	done
 
 End
