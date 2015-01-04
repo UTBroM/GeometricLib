@@ -194,7 +194,7 @@ BOOL containsPoint(Polygon inpoly, Point inpoint)
  * Point p1, p2, p3, p4
  * Return an pointer on an intersection
  * /!\ p1 and p2 constitue the first segment, and p3, p4 the second
- * /!\ This function return NULL if to segment of a polygon are mingled
+ * /!\ This function return NULL if a segment of a polygon are mingled
  **/
 Intersection* segmentsCross(Point p1, Point p2, Point p3, Point p4)
 {
@@ -294,7 +294,8 @@ Polygon removeTail (Polygon inpoly)
  *	- OUTSIDE if the second polygon is fully outside the first one
  *	- INTERSECT if the second polygon is partially inside/outside the first one, in other words intersecting the second one
  *	- ENCLOSING if the first polygon is fully in
- *
+ *  - EQUAL if polygons are strictly the same
+ * 
  * Polygon poly1, poly2
  * Return out
  **/
