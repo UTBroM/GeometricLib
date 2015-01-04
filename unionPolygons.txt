@@ -4,8 +4,8 @@
 
 LEXICON
 ========
-inpoly: the polygon wich we compute the central symmetry
-inpoint: the reference point for the symmetry
+poly1: The first polygon
+poly2: The second polygon
 i: counting integer
 
 ALGORITHM
