@@ -16,10 +16,11 @@ Return: Polygon: outpoly
 
 function intersectionPolygons(poly1 : Polygon, poly2 : Polygon) : Polygon
 Begin
-
+	
+	inIntersect = 0
 	for i from 1 to size(poly1) do
 		for j from 1 to size(poly2) do
-			intersect = segmentsCross(value(head(poly1)),value(next(head(poly1))),value(head(poly)),valu2e(next(head(poly2))))
+			intersect = segmentsCross(value(head(poly1)),value(next(head(poly1))),value(head(poly)),value(next(head(poly2))))
 			intersectPoint = value(intersect)
 			if intersect != NULL then
 				newpoly = addTail(newpoly, intersectPoint)
@@ -31,11 +32,11 @@ Begin
 				endif
 			else
 				if inIntersect = 1 then
-					if containsPoint(poly2, a1(intersect)) then
-						newpoly = addTail(newpoly, a1(intersect))
+					if containsPoint(poly2, head(poly2)) then
+						newpoly = addTail(newpoly, head(poly2))
 					endif
-					if containsPoint(poly2, a2(intersect)) then
-						newpoly = addTail(newpoly, a2(intersect))
+					if containsPoint(poly1, head(poly2)) then
+						newpoly = addTail(newpoly, head(poly2))
 					endif
 				endif
 			endif
@@ -44,4 +45,5 @@ Begin
 		head(poly1) = next(head(poly1))
 	done
 
+	intersectionPolygons <- newpoly
 End
