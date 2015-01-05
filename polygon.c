@@ -418,8 +418,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 
 	Polygon outpoly = createPolygon();
 	int i;
-	double angle;
-	PointElement *min, *minangle;
+	PointElement *min;
 
 	/*Find the point with the lowest y-coordinate and if there is multiple points with the same y-coordinate the one with the lowest x-coordinate, it would be the first point*/
 
@@ -444,36 +443,11 @@ Polygon convexhullPolygon(Polygon inpoly)
 	/*Copy the value of this point in the new polygon*/
 	outpoly = addTail(outpoly, min->value);
 
-	/*Set the head of inpoly to the next point of min*/
-
-	inpoly.head = min->next;
-
-	/*The second point is the one who make the lowest angle with the x-axis */
-
-	angle = atan2 (inpoly.head->value.y - min->value.y,inpoly.head->value.x -  min->value.x);
-	minangle = inpoly.head;
-
-	for(i=0;i<inpoly.size-1;i++)
-	{
-
-		inpoly.head = inpoly.head->next;
-
-		if(atan2 ( min->value.y - inpoly.head->value.y, min->value.x - inpoly.head->value.x) < angle){
-
-			minangle = inpoly.head;
-
-		}
-
-	}
-
-	/*Copy the value of this point in the new polygon*/
-	outpoly = addTail(outpoly, minangle->value);
-
-	/*Remove these elements in inpoly*/
+	/*Remove this elements in inpoly*/
 	inpoly.head = min->prev;
-	removePoint(inpoly, 2);
-	inpoly.head = minangle->prev;
-	removePoint(inpoly, 2);
+	inpoly = removePoint(inpoly, 2);
+
+	inpoly = angleSortPolygon(inpoly, outpoly.head->value);
 
 	for (i = 3; i < inpoly.size; i++)
 	{
