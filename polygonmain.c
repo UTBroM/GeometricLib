@@ -106,7 +106,7 @@ int main(int argc, char* argv[]) {
 			lol=addTail(lol, createPoint(0,1));
 			printf("Succefull Polygon called lol\n");
 			printPolygon(lol);
-			printf("The point is %s in the polygon.\n\n", ((containsPoint(lol, test))?" ":" not ");
+			printf("The point is %s in the polygon.\n\n", (containsPoint(lol, test))?" ":" not ");
 			break;
 		case 5:
 			printf("... Point and  2 Polygon creation ...\n");
