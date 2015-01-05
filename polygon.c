@@ -676,3 +676,64 @@ Polygon unionPolygons(Polygon poly1, Polygon poly2)
 	return outpoly;
 
 }
+
+/**
+ * Sort the points in a polygon by the angle they make with a point and the x-axis
+ * inpoly - the Polygon to sort
+ * inpoint - the base point
+ * Returns the sorted version of polygon
+ */
+Polygon angleSortPolygon (Polygon inpoly, Point inpoint)
+{
+	Polygon sortedPoly = createPolygon();
+	int i, j;
+	double ainpoly, asortpoly; /*Angles to test*/
+	PointElement *saveHead; /*Element used to save the head of the sorted polygon*/
+
+	if(inpoly.size > 0){
+
+		sortedPoly = addTail(sortedPoly, inpoly.head->value);
+		saveHead = sortedPoly.head;
+		inpoly.head = inpoly.head->next;
+
+		j=1;
+
+		while(j < inpoly.size){
+
+			i = 0;
+			ainpoly = atan2(inpoly.head->value.y - inpoint.y, inpoly.head->value.x -  inpoint.x);
+			asortpoly = atan2(sortedPoly.head->value.y - inpoint.y, sortedPoly.head->value.x -  inpoint.x);
+			/*These two function compute the angle of the current point in each polygon*/
+
+			while( (ainpoly <= asortpoly) && (i < sortedPoly.size) ){
+
+				sortedPoly.head = sortedPoly.head->next;
+				asortpoly = atan2(sortedPoly.head->value.y - inpoint.y, sortedPoly.head->value.x -  inpoint.x);
+				i++;
+
+			}
+
+			if(i == sortedPoly.size){
+
+				sortedPoly = addTail(sortedPoly, inpoly.head->value);
+				saveHead = sortedPoly.head->prev;
+
+			}
+			else{
+
+				sortedPoly = addTail(sortedPoly, inpoly.head->value);
+
+			}
+			sortedPoly.head = saveHead;
+
+			inpoly.head = inpoly.head->next;
+
+			j++;
+
+		}
+
+        }
+
+	return sortedPoly;
+}
+

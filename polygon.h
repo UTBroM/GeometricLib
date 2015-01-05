@@ -224,5 +224,13 @@ Polygon rotatePolygon(Polygon inpoly, Point inpoint, double angle);
  **/
 Polygon unionPolygons(Polygon poly1, Polygon poly2);
 
+/**
+ * Sort the points in a polygon by the angle they make with a point and the x-axis
+ * inpoly - the Polygon to sort
+ * inpoint - the base point
+ * Returns the sorted version of polygon
+ */
+Polygon angleSortPolygon (Polygon inpoly, Point inpoint);
+
 #endif /*__POLYGON_H__*/
 
