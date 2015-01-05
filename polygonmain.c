@@ -329,6 +329,7 @@ int main(int argc, char* argv[]) {
 		
 		default:
 			printf("Don't choice a number between 1 and 15\n");
+			break;
 	}
 	
 
