@@ -450,7 +450,7 @@ Polygon convexhullPolygon(Polygon inpoly)
 
 	/*The second point is the one who make the lowest angle with the x-axis */
 
-	angle = atan2 (inpoly.head->value.y - min->value.y,inpoly.head->value.x -  min->value.x);
+	angle = atan2 ( min->value.y - inpoly.head->value.y, min->value.x - inpoly.head->value.x);
 	minangle = inpoly.head;
 
 	for(i=0;i<inpoly.size-1;i++)
