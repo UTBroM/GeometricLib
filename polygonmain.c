@@ -4,7 +4,7 @@
 int main(int argc, char* argv[]) {
 
 	int choice, i;
-	Polygon lol, polyloutre, convexpoly, biglol, symetriclol;
+	Polygon lol, polyloutre, convexpoly, biglol, symetriclol, rotatelol;
 	Point a, P1, P2, P3, P4, test;
 	Status testing;
 	Intersection* testlol; 
@@ -24,20 +24,19 @@ int main(int argc, char* argv[]) {
 
 	printf("1. Create a Point and display it\n");
 	printf("2. Create a Polygon add Point in it and see the result\n");
-	printf("5. removePoint\n");
-	printf("6. removeTail\n");
-	printf("7. containsPoint\n");
-	printf("8. containsPolygon\n");
-	printf("9. translatePolygon\n");
-	printf("10. rotatePolygon\n");
-	printf("11. scalePolygon\n");
-	printf("12. centralSymmetry\n");
-	printf("13. segmentsCross\n");
-	printf("14. convexhullPolygon\n");
-	printf("15. unionPolygon\n");
-	printf("16. printPoint\n");
-	printf("17. printPolygon\n");
-	printf("18. toString\n");
+	printf("3. removeTail\n");
+	printf("4. containsPoint\n");
+	printf("5. containsPolygon\n");
+	printf("6. translatePolygon\n");
+	printf("7. rotatePolygon\n");
+	printf("8. scalePolygon\n");
+	printf("9. centralSymmetry\n");
+	printf("10. segmentsCross\n");
+	printf("11. convexhullPolygon\n");
+	printf("12. unionPolygon\n");
+	printf("13. printPoint\n");
+	printf("14. printPolygon\n");
+	printf("15. toString\n");
 
 	printf("\nVeuillez choisir la fonction que vous voulez tester ?");
 	scanf("%d", &choice);
@@ -49,7 +48,6 @@ int main(int argc, char* argv[]) {
 			printf("Succefull Point creation\n");
 			printPoint(a);
 			break;
-
 		case 2:
 			printf("... Point and Polygon creation ...\n");
 			lol=createPolygon();
@@ -63,7 +61,40 @@ int main(int argc, char* argv[]) {
 			printf("Succefull Polygon creation\n");
 			printPolygon(lol);
 			break;
-		case 7:
+		case 3:
+			printf("Enter x1\n");
+			scanf("%lf", &x1);
+			printf("Enter y1\n");
+			scanf("%lf", &y1);
+			printf("Enter x2\n");
+			scanf("%lf", &x2);
+			printf("Enter y2\n");
+			scanf("%lf", &y2);
+			printf("Enter x3\n");
+			scanf("%lf", &x3);
+			printf("Enter y3\n");
+			scanf("%lf", &y3);
+			printf("Enter x4\n");
+			scanf("%lf", &x4);
+			printf("Enter y4\n");
+			scanf("%lf", &y4);
+
+			P1 = createPoint(x1,y1);
+			P2 = createPoint(x2,y2);
+			P3 = createPoint(x3,y3);
+			P4 = createPoint(x4,y4);
+			lol=createPolygon();
+			lol=addTail(lol, P1);
+			lol=addTail(lol, P2);
+			lol=addTail(lol, P3);
+			lol=addTail(lol, P4);
+			printPolygon(lol);
+			printf("Before remouving\n");
+			removeTail(lol);
+			printf("After\n");
+			printPolygon(lol);
+			break;
+		case 4:
 			test = createPoint(-1,0.5);
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
@@ -75,9 +106,9 @@ int main(int argc, char* argv[]) {
 			lol=addTail(lol, createPoint(0,1));
 			printf("Succefull Polygon called lol\n");
 			printPolygon(lol);
-			printf("The point is %s in the polygon.\n\n", ((containsPoint(lol, test)))" ":" not ");
-
-		case 8:
+			printf("The point is %s in the polygon.\n\n", ((containsPoint(lol, test))" : not ");
+			break;
+		case 5:
 			printf("... Point and  2 Polygon creation ...\n");
 			
 			lol=createPolygon();
@@ -100,8 +131,8 @@ int main(int argc, char* argv[]) {
 			testing=containsPolygon(lol,polyloutre);
 
 			printf("\nLes deux polygones sont : %d\n", testing);
-
-		case 9:
+			break;
+		case 6:
 			printf("... Polygon creation ...\n");
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
@@ -130,7 +161,7 @@ int main(int argc, char* argv[]) {
 			printPolygon(lol);
 			break;
 
-		case 10:
+		case 7:
 			printf("\nTesting the rotation with an angle of 2.1rad around the point (1,3)");
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
@@ -146,7 +177,7 @@ int main(int argc, char* argv[]) {
 			printPolygon(rotatelol);
 			break;
 
-		case 11;
+		case 8:
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
 			lol=addTail(lol, createPoint(1,0));
@@ -163,7 +194,7 @@ int main(int argc, char* argv[]) {
 			printPolygon(biglol);
 			break;
 
-		case 12:
+		case 9:
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
 			lol=addTail(lol, createPoint(1,0));
@@ -176,8 +207,8 @@ int main(int argc, char* argv[]) {
 			printf("\nTesting the symmetry by the point (0,0)\n");
 			symetriclol = centralSymmetry(lol, createPoint(0,0));
 			printPolygon(symetriclol);
-
-		case 13:
+			break;
+		case 10:
 			printf("... Testing segmentsCross ...");
 
 
@@ -212,7 +243,7 @@ int main(int argc, char* argv[]) {
 			}
 			break;
 
-		case 14:
+		case 11:
 			printf("\n ... Test calcul convexhull ...\n");
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
@@ -235,7 +266,10 @@ int main(int argc, char* argv[]) {
 			printf("Convex hull :\n");
 			printPolygon(lol);
 			break;
-		case 16:
+		case 12:
+			printf("sorry there is a problem with the test.\n");
+			break;
+		case 13:
 			printf("Enter x1\n");
 			scanf("%lf", &x1);
 			printf("Enter y1\n");
@@ -246,7 +280,7 @@ int main(int argc, char* argv[]) {
 			printPoint(P1);
 			break;
 
-		case 17:
+		case 14:
 			printf("Enter x1\n");
 			scanf("%lf", &x1);
 			printf("Enter y1\n");
@@ -276,7 +310,7 @@ int main(int argc, char* argv[]) {
 			printPolygon(lol);
 			break;
 
-		case 18:
+		case 15:
 			printf("... Polygon creation ...\n");
 			lol=createPolygon();
 			lol=addTail(lol, createPoint(0,0));
@@ -292,6 +326,8 @@ int main(int argc, char* argv[]) {
 			printf("Succefull conversion\n");
 			printf("%s\n", string);
 			break;
+		default:
+			printf("Don't choice a number between 1 and 15\n");
 
 	}
 	
