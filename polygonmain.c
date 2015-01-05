@@ -4,8 +4,8 @@
 int main(int argc, char* argv[]) {
 
 	int choice, i;
-	Polygon lol, polyloutre, convexpoly, biglol, symetriclol;
-	Point a, P1, P2, P3, P4, test;
+	Polygon lol, polyloutre, convexpoly;
+	Point a, P1, P2, test;
 	Status testing;
 	Intersection* testlol; 
 	double x1, x2, y1, y2, x3, x4, y3, y4;
@@ -130,53 +130,6 @@ int main(int argc, char* argv[]) {
 			printPolygon(lol);
 			break;
 
-		case 10:
-			printf("\nTesting the rotation with an angle of 2.1rad around the point (1,3)");
-			lol=createPolygon();
-			lol=addTail(lol, createPoint(0,0));
-			lol=addTail(lol, createPoint(1,0));
-			lol=addTail(lol, createPoint(0.5,0.5));
-			lol=addTail(lol, createPoint(1,1));
-			lol=addTail(lol, createPoint(1,2));
-			lol=addTail(lol, createPoint(-1,2));
-			lol=addTail(lol, createPoint(10,100));
-			printf("Here Polygon before rotation\n");
-			printPolygon(lol);
-			rotatelol = rotatePolygon(lol, createPoint(1,3), 2.1);
-			printPolygon(rotatelol);
-			break;
-
-		case 11;
-			lol=createPolygon();
-			lol=addTail(lol, createPoint(0,0));
-			lol=addTail(lol, createPoint(1,0));
-			lol=addTail(lol, createPoint(0.5,0.5));
-			lol=addTail(lol, createPoint(1,1));
-			lol=addTail(lol, createPoint(1,2));
-			lol=addTail(lol, createPoint(-1,2));
-			lol=addTail(lol, createPoint(10,100));
-			printf("Here Polygon before scaling\n");
-			printPolygon(lol);
-			
-			printf("\nTesting the scaling by a factor of 3.2\n");
-			biglol=scalePolygon(lol,3.2);
-			printPolygon(biglol);
-			break;
-
-		case 12:
-			lol=createPolygon();
-			lol=addTail(lol, createPoint(0,0));
-			lol=addTail(lol, createPoint(1,0));
-			lol=addTail(lol, createPoint(0.5,0.5));
-			lol=addTail(lol, createPoint(1,1));
-			lol=addTail(lol, createPoint(1,2));
-			lol=addTail(lol, createPoint(-1,2));
-			lol=addTail(lol, createPoint(10,100));
-			printf("Here Polygon before symmetry\n");
-			printf("\nTesting the symmetry by the point (0,0)\n");
-			symetriclol = centralSymmetry(lol, createPoint(0,0));
-			printPolygon(symetriclol);
-
 		case 13:
 			printf("... Testing segmentsCross ...");
 
@@ -233,46 +186,6 @@ int main(int argc, char* argv[]) {
 				convexpoly.head=convexpoly.head->next;
 			}
 			printf("Convex hull :\n");
-			printPolygon(lol);
-			break;
-		case 16:
-			printf("Enter x1\n");
-			scanf("%lf", &x1);
-			printf("Enter y1\n");
-			scanf("%lf", &y1);
-			
-			P1 = createPoint(x1,y1);
-			
-			printPoint(P1);
-			break;
-
-		case 17:
-			printf("Enter x1\n");
-			scanf("%lf", &x1);
-			printf("Enter y1\n");
-			scanf("%lf", &y1);
-			printf("Enter x2\n");
-			scanf("%lf", &x2);
-			printf("Enter y2\n");
-			scanf("%lf", &y2);
-			printf("Enter x3\n");
-			scanf("%lf", &x3);
-			printf("Enter y3\n");
-			scanf("%lf", &y3);
-			printf("Enter x4\n");
-			scanf("%lf", &x4);
-			printf("Enter y4\n");
-			scanf("%lf", &y4);
-
-			P1 = createPoint(x1,y1);
-			P2 = createPoint(x2,y2);
-			P3 = createPoint(x3,y3);
-			P4 = createPoint(x4,y4);
-			lol=createPolygon();
-			lol=addTail(lol, P1);
-			lol=addTail(lol, P2);
-			lol=addTail(lol, P3);
-			lol=addTail(lol, P4);
 			printPolygon(lol);
 			break;
 
