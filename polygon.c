@@ -409,7 +409,7 @@ Polygon translatePolygon(Polygon inpoly, Point P1, Point P2)
 }
 
 /**
- * Function wich return the convex hull of a polygon
+ * Function wich return the convex hull of a polygon. Warning ! It works only if the polygon is turning to the left (this is because we didn't manage to sort properly the polygon)
  * inpoly - Polygon 
  * Return outpoly
  **/
