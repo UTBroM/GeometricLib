@@ -3,156 +3,211 @@
 
 int main(int argc, char* argv[]) {
 
-	Polygon lol, polyloutre, convexpoly, biglol, symetriclol, rotatelol, testingpoly;
-	Point test = createPoint(-1,0.5);
-	Point P1, P2;
-	int i;
-	double x1=0, x2=0, x3=0, x4=0, y1=0, y2=0, y3=0, y4=0;
-	char* string;
-	Intersection* testlol;
+	int choice, i;
+	Polygon lol, polyloutre, convexpoly;
+	Point a, P1, P2, test;
 	Status testing;
+	Intersection* testlol; 
+	double x1, x2, y1, y2, x3, x4, y3, y4;
+	char* string;
 
-	lol=createPolygon();
-	lol=addTail(lol, createPoint(0,0));
-	lol=addTail(lol, createPoint(1,0));
-	lol=addTail(lol, createPoint(0.5,0.5));
-	lol=addTail(lol, createPoint(1,1));
-	lol=addTail(lol, createPoint(1,2));
-	lol=addTail(lol, createPoint(-1,2));
-	lol=addTail(lol, createPoint(0,1));
 
-	printf("Testing printPolygon\n");
-	printPolygon(lol);
 
-	printf("Testing translatePolygon\n");
-	P1 = createPoint(0,0);
-	P2 = createPoint(1,1);
-	lol = translatePolygon(lol, P1, P2);
-	printPolygon(lol);
+	printf("################################################################################\n");
+	printf("#  ****   *****  ****  *     * ***** ***** *****  *  *****      *     * *****  #\n");
+	printf("# *    *  *     *    * * *  ** *       *   *    * * *           *     * *    * #\n");
+	printf("# *       ***   *    * *  *  * ***     *   ** *   * *           *     * * ***  #\n");
+	printf("# *   **  *     *    * *     * *       *   *   *  * *           *     * *    * #\n");
+	printf("#   ****  *****  ****  *     * *****   *   *    * *  *****      ***** * *****  #\n");
+	printf("################################################################################\n");
 
-	printf("Testing toString\n");
-	string = toString(lol);
-	printf("%s\n", string);
 
-	polyloutre=createPolygon();
-	polyloutre=addTail(polyloutre, createPoint(-2,-1));
-	polyloutre=addTail(polyloutre, createPoint(-1,3));
-	polyloutre=addTail(polyloutre, createPoint(2,3));
-	polyloutre=addTail(polyloutre, createPoint(2,-2));
+	printf("1. Create a Point and display it\n");
+	printf("2. Create a Polygon add Point in it and see the result\n");
+	printf("5. removePoint\n");
+	printf("6. removeTail\n");
+	printf("7. containsPoint\n");
+	printf("8. containsPolygon\n");
+	printf("9. translatePolygon\n");
+	printf("10. rotatePolygon\n");
+	printf("11. scalePolygon\n");
+	printf("12. centralSymmetry\n");
+	printf("13. segmentsCross\n");
+	printf("14. convexhullPolygon\n");
+	printf("15. unionPolygon\n");
+	printf("16. printPoint\n");
+	printf("17. printPolygon\n");
+	printf("18. toString\n");
 
-	printf("\n\ntaille : %d", lol.size);
+	printf("\nVeuillez choisir la fonction que vous voulez tester ?");
+	scanf("%d", &choice);
 
-	for(i=0;i<lol.size;i++)
-	{
+	switch(choice){
+		case 1:
+			printf("... Point creation ...\n");
+			a = createPoint(0,1);
+			printf("Succefull Point creation\n");
+			printPoint(a);
+			break;
 
-		printf("\n\nx %de point : %f", i+1, lol.head->value.x);
-		printf("\ny %de point : %f\n\n", i+1, lol.head->value.y);
-		lol.head=lol.head->next;
+		case 2:
+			printf("... Point and Polygon creation ...\n");
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(0,1));
+			printf("Succefull Polygon creation\n");
+			printPolygon(lol);
+			break;
+		case 7:
+			test = createPoint(-1,0.5);
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(0,1));
+			printf("Succefull Polygon called lol\n");
+			printPolygon(lol);
+			printf("The point is %s in the polygon.\n\n", ((containsPoint(lol, test)))" ":" not ");
+
+		case 8:
+			printf("... Point and  2 Polygon creation ...\n");
+			
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(0,1));
+			
+			polyloutre=createPolygon();
+			polyloutre=addTail(polyloutre, createPoint(-2,-1));
+			polyloutre=addTail(polyloutre, createPoint(-1,3));
+			polyloutre=addTail(polyloutre, createPoint(2,3));
+			polyloutre=addTail(polyloutre, createPoint(2,-2));
+
+			printf("Succefull Polygon creation\n");
+
+			testing=containsPolygon(lol,polyloutre);
+
+			printf("\nLes deux polygones sont : %d\n", testing);
+
+		case 9:
+			printf("... Polygon creation ...\n");
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(10,100));
+			printf("Here Polygon before translation\n");
+			printPolygon(lol);
+
+			printf("Enter x of first point which define the translation vector\n");
+			scanf("%lf", &x1);
+			printf("Enter y of first point which define the translation vector\n");
+			scanf("%lf", &y1);
+			printf("Enter x of second point which define the translation vector\n");
+			scanf("%lf", &x2);
+			printf("Enter y of second point which define the translation vector\n");
+			scanf("%lf", &y2);
+			P1 = createPoint(x1,y1);
+			P2 = createPoint(x2,y2);
+
+			lol = translatePolygon(lol, P1, P2);
+			printf("Now after translation\n");
+			printPolygon(lol);
+			break;
+
+		case 13:
+			printf("... Testing segmentsCross ...");
+
+
+			printf("Enter x1\n");
+			scanf("%lf", &x1);
+			printf("Enter y1\n");
+			scanf("%lf", &y1);
+			printf("Enter x2\n");
+			scanf("%lf", &x2);
+			printf("Enter y2\n");
+			scanf("%lf", &y2);
+			printf("Enter x3\n");
+			scanf("%lf", &x3);
+			printf("Enter y3\n");
+			scanf("%lf", &y3);
+			printf("Enter x4\n");
+			scanf("%lf", &x4);
+			printf("Enter y4\n");
+			scanf("%lf", &y4);
+
+			testlol = segmentsCross(createPoint(x1,y1), createPoint(x2,y2), createPoint(x3,y3), createPoint(x4,y4));
+
+			if(testlol != NULL){
+
+				printf("\n\nL'intersection est : \n\n	x: %f\n	y: %f\n\n", testlol->value.x, testlol->value.y);
+
+			}
+			else{
+
+				printf("\n\nIl n'y a pas d'intersection\n\n");
+
+			}
+			break;
+
+		case 14:
+			printf("\n ... Test calcul convexhull ...\n");
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(10,100));
+			convexpoly = convexhullPolygon(lol);
+
+	        printf("\ntaille : %d\n", convexpoly.size);
+
+	        for(i=0;i<convexpoly.size;i++)
+			{
+				printf("\n\nx %de point : %f", i+1, convexpoly.head->value.x);
+				printf("\ny %de point : %f\n\n", i+1, convexpoly.head->value.y);
+				convexpoly.head=convexpoly.head->next;
+			}
+			printf("Convex hull :\n");
+			printPolygon(lol);
+			break;
+
+		case 18:
+			printf("... Polygon creation ...\n");
+			lol=createPolygon();
+			lol=addTail(lol, createPoint(0,0));
+			lol=addTail(lol, createPoint(1,0));
+			lol=addTail(lol, createPoint(0.5,0.5));
+			lol=addTail(lol, createPoint(1,1));
+			lol=addTail(lol, createPoint(1,2));
+			lol=addTail(lol, createPoint(-1,2));
+			lol=addTail(lol, createPoint(0,1));
+			printf("Succefull Polygon creation\n");
+			printf("... String conversion ...\n");
+			string = toString(lol);
+			printf("Succefull conversion\n");
+			printf("%s\n", string);
+			break;
 
 	}
-
-	printf("\nTest point coordinates :\n\n	x:%f\n	y:%f\n\n", test.x,test.y);
-
-	printf("The point is%sin the polygon.\n\n", ((containsPoint(lol, test)))?" ":" not ");
-
-	/*printf("\nSuppression du 2e élément...\n");
-	lol=removePoint(lol, 2);*/
-
-        printf("\n\ntaille : %d", lol.size);
-
-        for(i=0;i<lol.size;i++)
-	{
-
-		printf("\n\nx %de point : %f", i+1, lol.head->value.x);
-		printf("\ny %de point : %f\n\n", i+1, lol.head->value.y);
-		lol.head=lol.head->next;
-
-	}
-
-	testing=containsPolygon(lol,polyloutre);
-
-	printf("\n\nLes deux polygones sont : %d", testing);
-
-	printf("\n==================================\n\nTest d'une intersection");
-
-	printf("\n\nEntrez les coordonées du point 1 :\n	x:");
-	x1=-1;
-	printf("%f",x1);
-	printf("\n	y:");
-	y1=0.25;
-	printf("%f",y1);
-	printf("\n\nEntrez les coordonées du point 2 :\n	x:");
-	x2=2.1;
-	printf("%f",x2);
-	printf("\n	y:");
-	y2=-1.4;
-	printf("%f",y2);
-	printf("\n\nEntrez les coordonées du point 3 :\n	x:");
-	x3=-1.4;
-	printf("%f",x3);
-	printf("\n	y:");
-	y3=-0.45;
-	printf("%f",y3);
-	printf("\n\nEntrez les coordonées du point 4 :\n	x:");
-	x4=12;
-	printf("%f",x4);
-	printf("\n	y:");
-	y4=11.45;
-	printf("%f",y4);
-
-	testlol = segmentsCross(createPoint(x1,y1), createPoint(x2,y2), createPoint(x3,y3), createPoint(x4,y4));
-
-	if(testlol != NULL){
-
-		printf("\n\nL'intersection est : \n\n	x: %f\n	y: %f\n\n", testlol->value.x, testlol->value.y);
-
-	}
-	else{
-
-		printf("\n\nIl n'y a pas d'intersection\n\n");
-
-	}
-
-	printf("\n\n test du calcul d'un convexhull :\n");
-
-	convexpoly = convexhullPolygon(lol);
-
-        printf("\ntaille : %d\n", convexpoly.size);
-
-        for(i=0;i<convexpoly.size;i++)
-	{
-
-		printf("\n\nx %de point : %f", i+1, convexpoly.head->value.x);
-		printf("\ny %de point : %f\n\n", i+1, convexpoly.head->value.y);
-		convexpoly.head=convexpoly.head->next;
-
-	}
-
-	printPolygon(lol);
-
-	printf("\nTesting the scaling by a factor of 3.2\n");
-	biglol=scalePolygon(lol,3.2);
-	printPolygon(biglol);
-
-	printf("\nTesting the symmetry by the point (0,0)\n");
-	symetriclol = centralSymmetry(lol, createPoint(0,0));
-	printPolygon(symetriclol);
-
-	printf("\nTesting the rotation with an angle of 2.1rad around the point (1,3)");
-	rotatelol = rotatePolygon(lol, createPoint(1,3), 2.1);
-	printPolygon(rotatelol);
-
-	testingpoly=createPolygon();
-	testingpoly=addTail(testingpoly, createPoint(-1,0));
-	testingpoly=addTail(testingpoly, createPoint(1,0));
-	testingpoly=addTail(testingpoly, createPoint(0,1));
-
-	printf("\nOther polygon\n");
-
-	testingpoly = rotatePolygon(testingpoly, createPoint(1,2), 3.14);
-	printPolygon(testingpoly);
-
-	free(testlol);
+	
 
 	return EXIT_SUCCESS;
 
