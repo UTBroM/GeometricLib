@@ -1,0 +1,44 @@
+/** Author : Paul TREHIOU & Victor SENE
+ *  Date : November 2014
+ **/
+
+LEXICON
+========
+newpoly: the modified polygon with the new point
+newelem: the new element which will be added
+
+ALGORITHM
+=========
+Data: 	Polygon: inpoly
+	Point: inpoint
+Return: newpoly
+
+
+function addTail(inpoly : Polygon, inpoint : Point) : Polygon
+Begin
+
+	head(newpoly) <- head(inpoly)
+	size(newpoly) <- size(inpoly)
+
+	value(newelem) <- inpoint
+	
+	if inpoly==NULL then do
+
+		head(newpoly) <- newelem
+		next(head(newpoly)) <- head(newpoly)
+		previous(head(newpoly)) <- head(newpoly)
+
+	else
+
+		next(newelem) <- head(inpoly)
+		previous(newelem) <- previous(head(inpoly))
+		next(previous(head(newpoly)) <- newelem
+		previous(head(newpoly)) <- newelem
+
+	done
+
+	size(newpoly) <- size(newpoly) + 1
+
+	addTail <- newpoly
+
+End
