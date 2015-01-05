@@ -326,6 +326,7 @@ int main(int argc, char* argv[]) {
 			printf("Succefull conversion\n");
 			printf("%s\n", string);
 			break;
+		
 		default:
 			printf("Don't choice a number between 1 and 15\n");
 
